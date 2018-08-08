@@ -20,11 +20,12 @@ pixel manipulation.
 
 * You should have already successfully installed the open source version
 of the Qt environment from the last assignment:
-[https://www.qt.io/download-open-source/](https://www.qt.io/download-open-source/)
+<https://www.qt.io/download-open-source>
 (At the time of writing, version 5.11 is the newest version. Any 5.x
 version should work. The installer, by default, includes all versions of
 Qt. Save space by installing only the most recent version and a
-compiler.)
+compiler.) Mac users with [Homebrew](https://brew.sh/)
+can alternatively install via: `brew install qt` and `brew cask install qt-creator`.
 
 * Download this assignment. This will create a folder named imageprocessing.
 Open the file named `imageprocessing.pro`. This should launch the Qt
@@ -110,9 +111,9 @@ your their code!).
 * **THIS IS AN INDIVIDUAL, NOT A GROUP ASSIGNMENT. That means all code
 written for this assignment should be original! Although you are
 permitted to consult with each other while working on this assignment,
-code that is substantially the same will be considered cheating. In your
+code that is substantially the same will be considered cheating.** In your
 `Notes.txt`, please note who deserves a star (who helped you with the
-assignment).**
+assignment).
 
 Overview:
 ---------
@@ -210,15 +211,23 @@ function call *f(x)* or *f(x,y)* to access the filter values instead
 of looking them up in an array *b*[x] or *b*[x,y]. The filter you
 will use is a triangle function:
 
-    $$\text{triangle}( \textit{radius}, x ) = \text{max}\left( 0, \ \  1 - \left| \frac{x}{\text{radius}} \right| \right)$$
+        triangle( radius, x ) = max( 0, 1 - | x/radius | )
 
-    You will need to normalize this on-the-fly. In 2D, the filter is
-    
+    $$\text{triangle}( \textit{radius}, x ) = \text{max}\left( 0, 1 - \left| \frac{x}{\text{radius}} \right| \right)$$
+
+    You will need to normalize this on-the-fly.  
+    In 2D, the filter is
+
+         f(x,y) = triangle( radius_x, x ) * triangle( radius_y, y )
+
     $$f(x,y ) = \text{triangle}( \text{radius}_x, x ) \cdot \text{triangle}( \text{radius}_y, y )$$
     
     By picking the right right radius for x and y, the scaling function will
 eliminate high frequencies that cause aliasing artifacts. The formula
 for the radius is:
+
+        if new_size > old_size: radius = 1
+        else: radius = old_size/new_size
 
     $$\text{radius} =
 \begin{cases}
