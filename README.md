@@ -13,9 +13,11 @@ Getting Started & Handing In:
 
 * The code will be written in C++. You are encouraged to write helper
 functions. They can eliminate a lot of redundant code.
+
 * The program is a command line program. It makes use of the open source
 Qt framework only for its QImage class for image loading and saving and
 pixel manipulation.
+
 * You should have already successfully installed the open source version
 of the Qt environment from the last assignment:
 [https://www.qt.io/download-open-source/](https://www.qt.io/download-open-source/)
@@ -23,9 +25,11 @@ of the Qt environment from the last assignment:
 version should work. The installer, by default, includes all versions of
 Qt. Save space by installing only the most recent version and a
 compiler.)
+
 * Download this assignment. This will create a folder named imageprocessing.
 Open the file named `imageprocessing.pro`. This should launch the Qt
 Creator development environment (IDE).
+
 * Build and run the code. The code should compile, but it will complain
 when running about not having enough arguments. You should see a message
 like:
@@ -39,8 +43,10 @@ like:
 
 * Add your code to `convolution.cpp`. You may wish to add helper functions
 at the top. There are some suggested signatures.
+
 * Build and run and test that it is working correctly. Qt Creator has a
 great debugger.
+
 * Run the following commands on the provided example images (replace `balls`
 with the name of each example). Copy your output `.png` files into a new
 `output` subdirectory.
@@ -72,13 +78,13 @@ with the name of each example). Copy your output `.png` files into a new
         ./imageprocessing convolve filters/heart.png balls.png balls-convolve-heart.png
         ./imageprocessing convolve filters/heart-flip.png balls.png balls-convolve-heart-flip.png
 
-The example images are:
+* The example images are:
 
-* `balls.png`
-* `bananas.png`
-* `puppy.png`
-* `wave.png`
-* `wikipedia.png`
+    * `balls.png`
+    * `bananas.png`
+    * `puppy.png`
+    * `wave.png`
+    * `wikipedia.png`
 
 * I have provided a script of commands `run_all.HOW` that will run all of
 those commands for all the examples. You will likely have to modify it
@@ -98,12 +104,14 @@ before the deadline. Your `Notes.txt` should describe any known issues
 or extra features. Your `Notes.txt` should also note the names of
 people in the class who deserve a star for helping you (not by giving
 your their code!).
+
 * The framework and libraries provide all the support code that you need.
+
 * **THIS IS AN INDIVIDUAL, NOT A GROUP ASSIGNMENT. That means all code
 written for this assignment should be original! Although you are
 permitted to consult with each other while working on this assignment,
 code that is substantially the same will be considered cheating. In your
-ReadMe, please note who deserves a star (who helped you with the
+`Notes.txt`, please note who deserves a star (who helped you with the
 assignment).**
 
 Overview:
