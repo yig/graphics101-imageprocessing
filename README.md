@@ -313,7 +313,7 @@ Qt functions you need for this assignment
 
 **QImage:**
 
-* `image.pixel(x,y)` returns the `QRgb` color for pixel x,y of a `QImage` image.
+* `image.pixel(x,y)` returns the `QRgb` color for pixel x,y of a `QImage image`.
 * `image.setPixel(x,y,c)` sets the pixel to a `QRgb` color `c`.
 
 * `image.width()` and `image.height()` return the width and height of the
