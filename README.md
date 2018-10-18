@@ -90,7 +90,7 @@ with the name of each example). Copy your output `.png` files into a new
 * I have provided a script of commands `run_all.HOW` that will run all of
 those commands for all the examples. You will likely have to modify it
 for your environment by changing the path to the convolve program. (I
-have also provided the script `generate_run_all.py` I used to generate
+have also provided the script `run_all_gen.py` I used to generate
 `run_all.HOW`.)
     * On a unix machine (like a Mac), you can type:
         * `sh run_all.HOW`
