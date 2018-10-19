@@ -40,10 +40,10 @@ if __name__ == '__main__':
         "bananas",
         "wave",
         "wikipedia",
-        "puppy2",
+        "puppy",
         "dot",
         
-        # "puppy",
+        # "puppy2",
         # "bumps",
         # "bubbles",
         # "london",
@@ -56,7 +56,7 @@ if __name__ == '__main__':
     ## Try things like:
     # python reference_gen.py | parallel
     # python reference_gen.py | grep scale | parallel
-    # python reference_gen.py puppy2 | grep scale | parallel
+    # python reference_gen.py puppy | grep scale | parallel
     
     ## If images are specified on the command line, that overrides the defaults.
     if len( sys.argv ) > 1:
