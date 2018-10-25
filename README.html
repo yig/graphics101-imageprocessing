@@ -1,0 +1,417 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>README</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+/*
+This document has been created with Marked.app <http://markedapp.com>, Copyright 2013 Brett Terpstra
+Content is property of the document author
+Please leave this notice in place, along with any additional credits below.
+---------------------------------------------------------------
+Title: GitHub
+Author: Brett Terpstra
+Description: Github README style. Includes theme for Pygmentized code blocks.
+*/
+html,body{color:black}*:not('#mkdbuttons'){margin:0;padding:0}#wrapper{font:13.34px helvetica,arial,freesans,clean,sans-serif;-webkit-font-smoothing:subpixel-antialiased;line-height:1.4;padding:3px;background:#fff;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px}p{margin:1em 0}a{color:#4183c4;text-decoration:none}#wrapper{background-color:#fff;padding:30px;margin:15px;font-size:14px;line-height:1.6}#wrapper>*:first-child{margin-top:0!important}#wrapper>*:last-child{margin-bottom:0!important}@media screen{#wrapper{box-shadow:0 0 0 1px #cacaca,0 0 0 4px #eee}}h1,h2,h3,h4,h5,h6{margin:20px 0 10px;padding:0;font-weight:bold;-webkit-font-smoothing:subpixel-antialiased;cursor:text}h1{font-size:28px;color:#000}h2{font-size:24px;border-bottom:1px solid #ccc;color:#000}h3{font-size:18px;color:#333}h4{font-size:16px;color:#333}h5{font-size:14px;color:#333}h6{color:#777;font-size:14px}p,blockquote,table,pre{margin:15px 0}ul{padding-left:30px}ol{padding-left:30px}ol li ul:first-of-type{margin-top:0}hr{background:transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;border:0 none;color:#ccc;height:4px;padding:0}#wrapper>h2:first-child{margin-top:0;padding-top:0}#wrapper>h1:first-child{margin-top:0;padding-top:0}#wrapper>h1:first-child+h2{margin-top:0;padding-top:0}#wrapper>h3:first-child,#wrapper>h4:first-child,#wrapper>h5:first-child,#wrapper>h6:first-child{margin-top:0;padding-top:0}a:first-child h1,a:first-child h2,a:first-child h3,a:first-child h4,a:first-child h5,a:first-child h6{margin-top:0;padding-top:0}h1+p,h2+p,h3+p,h4+p,h5+p,h6+p,ul li>:first-child,ol li>:first-child{margin-top:0}dl{padding:0}dl dt{font-size:14px;font-weight:bold;font-style:italic;padding:0;margin:15px 0 5px}dl dt:first-child{padding:0}dl dt>:first-child{margin-top:0}dl dt>:last-child{margin-bottom:0}dl dd{margin:0 0 15px;padding:0 15px}dl dd>:first-child{margin-top:0}dl dd>:last-child{margin-bottom:0}blockquote{border-left:4px solid #DDD;padding:0 15px;color:#777}blockquote>:first-child{margin-top:0}blockquote>:last-child{margin-bottom:0}table{border-collapse:collapse;border-spacing:0;font-size:100%;font:inherit}table th{font-weight:bold;border:1px solid #ccc;padding:6px 13px}table td{border:1px solid #ccc;padding:6px 13px}table tr{border-top:1px solid #ccc;background-color:#fff}table tr:nth-child(2n){background-color:#f8f8f8}img{max-width:100%}code,tt{margin:0 2px;padding:0 5px;white-space:nowrap;border:1px solid #eaeaea;background-color:#f8f8f8;border-radius:3px;font-family:Consolas,'Liberation Mono',Courier,monospace;font-size:12px;color:#333}pre>code{margin:0;padding:0;white-space:pre;border:0;background:transparent}.highlight pre{background-color:#f8f8f8;border:1px solid #ccc;font-size:13px;line-height:19px;overflow:auto;padding:6px 10px;border-radius:3px}pre{background-color:#f8f8f8;border:1px solid #ccc;font-size:13px;line-height:19px;overflow:auto;padding:6px 10px;border-radius:3px}pre code,pre tt{background-color:transparent;border:0}.poetry pre{font-family:Georgia,Garamond,serif!important;font-style:italic;font-size:110%!important;line-height:1.6em;display:block;margin-left:1em}.poetry pre code{font-family:Georgia,Garamond,serif!important;word-break:break-all;word-break:break-word;-webkit-hyphens:auto;-moz-hyphens:auto;hyphens:auto;white-space:pre-wrap}sup,sub,a.footnote{font-size:1.4ex;height:0;line-height:1;vertical-align:super;position:relative}sub{vertical-align:sub;top:-1px}@media print{body{background:#fff}img,pre,blockquote,table,figure{page-break-inside:avoid}#wrapper{background:#fff;border:0}code{background-color:#fff;color:#333!important;padding:0 .2em;border:1px solid #dedede}pre{background:#fff}pre code{background-color:white!important;overflow:visible}}@media screen{body.inverted{color:#eee!important;border-color:#555;box-shadow:none}.inverted #wrapper,.inverted hr .inverted p,.inverted td,.inverted li,.inverted h1,.inverted h2,.inverted h3,.inverted h4,.inverted h5,.inverted h6,.inverted th,.inverted .math,.inverted caption,.inverted dd,.inverted dt,.inverted blockquote{color:#eee!important;border-color:#555;box-shadow:none}.inverted td,.inverted th{background:#333}.inverted h2{border-color:#555}.inverted hr{border-color:#777;border-width:1px!important}::selection{background:rgba(157,193,200,0.5)}h1::selection{background-color:rgba(45,156,208,0.3)}h2::selection{background-color:rgba(90,182,224,0.3)}h3::selection,h4::selection,h5::selection,h6::selection,li::selection,ol::selection{background-color:rgba(133,201,232,0.3)}code::selection{background-color:rgba(0,0,0,0.7);color:#eee}code span::selection{background-color:rgba(0,0,0,0.7)!important;color:#eee!important}a::selection{background-color:rgba(255,230,102,0.2)}.inverted a::selection{background-color:rgba(255,230,102,0.6)}td::selection,th::selection,caption::selection{background-color:rgba(180,237,95,0.5)}.inverted{background:#0b2531;background:#252a2a}.inverted #wrapper{background:#252a2a}.inverted a{color:#acd1d5}}.highlight .c{color:#998;font-style:italic}.highlight .err{color:#a61717;background-color:#e3d2d2}.highlight .k,.highlight .o{font-weight:bold}.highlight .cm{color:#998;font-style:italic}.highlight .cp{color:#999;font-weight:bold}.highlight .c1{color:#998;font-style:italic}.highlight .cs{color:#999;font-weight:bold;font-style:italic}.highlight .gd{color:#000;background-color:#fdd}.highlight .gd .x{color:#000;background-color:#faa}.highlight .ge{font-style:italic}.highlight .gr{color:#a00}.highlight .gh{color:#999}.highlight .gi{color:#000;background-color:#dfd}.highlight .gi .x{color:#000;background-color:#afa}.highlight .go{color:#888}.highlight .gp{color:#555}.highlight .gs{font-weight:bold}.highlight .gu{color:#800080;font-weight:bold}.highlight .gt{color:#a00}.highlight .kc,.highlight .kd,.highlight .kn,.highlight .kp,.highlight .kr{font-weight:bold}.highlight .kt{color:#458;font-weight:bold}.highlight .m{color:#099}.highlight .s{color:#d14}.highlight .na{color:#008080}.highlight .nb{color:#0086b3}.highlight .nc{color:#458;font-weight:bold}.highlight .no{color:#008080}.highlight .ni{color:#800080}.highlight .ne,.highlight .nf{color:#900;font-weight:bold}.highlight .nn{color:#555}.highlight .nt{color:#000080}.highlight .nv{color:#008080}.highlight .ow{font-weight:bold}.highlight .w{color:#bbb}.highlight .mf,.highlight .mh,.highlight .mi,.highlight .mo{color:#099}.highlight .sb,.highlight .sc,.highlight .sd,.highlight .s2,.highlight .se,.highlight .sh,.highlight .si,.highlight .sx{color:#d14}.highlight .sr{color:#009926}.highlight .s1{color:#d14}.highlight .ss{color:#990073}.highlight .bp{color:#999}.highlight .vc,.highlight .vg,.highlight .vi{color:#008080}.highlight .il{color:#099}.highlight .gc{color:#999;background-color:#eaf2f5}.type-csharp .highlight .k,.type-csharp .highlight .kt{color:#00F}.type-csharp .highlight .nf{color:#000;font-weight:normal}.type-csharp .highlight .nc{color:#2b91af}.type-csharp .highlight .nn{color:#000}.type-csharp .highlight .s,.type-csharp .highlight .sc{color:#a31515}
+</style>
+
+</head>
+<body class="normal">
+  <div id="wrapper">
+      <h1 id="computergraphics-homeworkassignment4-imageprocessing">Computer Graphics - Homework Assignment 4 - Image Processing</h1>
+
+<h2 id="goals:">Goals:</h2>
+
+<ul>
+<li>Understand convolution and image processing.</li>
+<li>Gain insight into high performance image processing algorithms.</li>
+<li>Gain more experience with raster images.</li>
+</ul>
+
+<h2 id="gettingstartedhandingin:">Getting Started &amp; Handing In:</h2>
+
+<ul>
+<li><p>The code will be written in C++. You are encouraged to write helper
+functions. They can eliminate a lot of redundant code.</p></li>
+<li><p>The program is a command line program. It makes use of the open source
+Qt framework only for its QImage class for image loading and saving and
+pixel manipulation.</p></li>
+<li><p>You should have already successfully installed the open source version
+of the Qt environment from the last assignment:
+<a href="https://www.qt.io/download-open-source">https://www.qt.io/download-open-source</a>
+(At the time of writing, version 5.11 is the newest version. Any 5.x
+version should work. The installer, by default, includes all versions of
+Qt. Save space by installing only the most recent version and a
+compiler.) Mac users with <a href="https://brew.sh/">Homebrew</a>
+can alternatively install via: <code>brew install qt</code> and <code>brew cask install qt-creator</code>.</p></li>
+<li><p>Download this assignment. This will create a folder named imageprocessing.
+Open the file named <code>imageprocessing.pro</code>. This should launch the Qt
+Creator development environment (IDE).</p></li>
+<li><p>Build and run the code. The code should compile, but it will complain
+when running about not having enough arguments. You should see a message
+like:</p>
+
+<pre><code>Usage: ./imageprocessing box radius input_image.png image_out.png
+Usage: ./imageprocessing scale width_percent height_percent input_image.png image_out.png
+Usage: ./imageprocessing convolve filter.png input_image.png image_out.png
+Usage: ./imageprocessing sharpen amount radius input_image.png image_out.png
+Usage: ./imageprocessing edges input_image.png image_out.png
+Usage: ./imageprocessing grey input_image.png image_out.png
+</code></pre></li>
+<li><p>Add your code to <code>convolution.cpp</code>. You may wish to add helper functions
+at the top. There are some suggested signatures.</p></li>
+<li><p>Build and run and test that it is working correctly. Qt Creator has a
+great debugger.</p></li>
+<li><p>Run the following commands on the provided example images (replace <code>balls</code>
+with the name of each example). Copy your output <code>.png</code> files into a new
+<code>output</code> subdirectory.</p>
+
+<pre><code>./imageprocessing grey balls.png balls-grey.png
+./imageprocessing box 0 balls.png balls-box0.png
+./imageprocessing box 3 balls.png balls-box3.png
+./imageprocessing box 25 balls.png balls-box25.png
+./imageprocessing edges balls.png balls-edges.png
+./imageprocessing sharpen 1 5 balls.png balls-sharpen-1-5.png
+./imageprocessing sharpen 2 5 balls.png balls-sharpen-2-5.png
+./imageprocessing sharpen 2 10 balls.png balls-sharpen-2-10.png
+./imageprocessing scale 100 100 balls.png balls-scale-100.png
+./imageprocessing scale 50 100 balls.png balls-scale-50w.png
+./imageprocessing scale 10 100 balls.png balls-scale-10w.png
+./imageprocessing scale 100 50 balls.png balls-scale-50h.png
+./imageprocessing scale 100 10 balls.png balls-scale-10h.png
+./imageprocessing scale 50 50 balls.png balls-scale-50.png
+./imageprocessing scale 10 10 balls.png balls-scale-10.png
+./imageprocessing scale 200 200 balls.png balls-scale-200.png
+./imageprocessing scale 50 200 balls.png balls-scale-50w-200h.png
+./imageprocessing scale 200 50 balls.png balls-scale-200w-50h.png
+./imageprocessing convolve filters/identity.png balls.png balls-convolve-identity.png
+./imageprocessing convolve filters/box3.png balls.png balls-convolve-box3.png
+./imageprocessing convolve filters/box25.png balls.png balls-convolve-box25.png
+./imageprocessing convolve filters/linear.png balls.png balls-convolve-linear.png
+./imageprocessing convolve filters/quadratic.png balls.png balls-convolve-quadratic.png
+./imageprocessing convolve filters/direction.png balls.png balls-convolve-direction.png
+./imageprocessing convolve filters/heart.png balls.png balls-convolve-heart.png
+./imageprocessing convolve filters/heart-flip.png balls.png balls-convolve-heart-flip.png
+</code></pre></li>
+<li><p>The example images are:</p>
+
+<ul>
+<li><code>balls.png</code></li>
+<li><code>bananas.png</code></li>
+<li><code>puppy.png</code></li>
+<li><code>wave.png</code></li>
+<li><code>wikipedia.png</code></li>
+</ul></li>
+<li>I have provided a script of commands <code>run_all.HOW</code> that will run all of
+those commands for all the examples. You will likely have to modify it
+for your environment by changing the path to the convolve program. (I
+have also provided the script <code>run_all_gen.py</code> I used to generate
+<code>run_all.HOW</code>.)
+
+<ul>
+<li>On a unix machine (like a Mac), you can type:
+
+<ul>
+<li><code>sh run_all.HOW</code></li>
+</ul></li>
+<li>On a Windows machine, I believe that if you change the name of
+<code>run_all.HOW</code> to <code>run_all.bat</code> you can then type:
+
+<ul>
+<li><code>run_all.bat</code></li>
+</ul></li>
+</ul></li>
+<li><p>When done, zip your entire <code>imageprocessing</code> directory along with the
+<code>output</code> subdirectory and a <code>Notes.txt</code> file as
+<code>hw04_lastname_firstname.zip</code> and upload your solution to Blackboard
+before the deadline. Your <code>Notes.txt</code> should describe any known issues
+or extra features. Your <code>Notes.txt</code> should also note the names of
+people in the class who deserve a star for helping you (not by giving
+your their code!).</p></li>
+<li><p>The framework and libraries provide all the support code that you need.</p></li>
+<li><p><strong>THIS IS AN INDIVIDUAL, NOT A GROUP ASSIGNMENT. That means all code
+written for this assignment should be original! Although you are
+permitted to consult with each other while working on this assignment,
+code that is substantially the same will be considered cheating.</strong> In your
+<code>Notes.txt</code>, please note who deserves a star (who helped you with the
+assignment).</p></li>
+</ul>
+
+<h2 id="overview:">Overview:</h2>
+
+<p>In this assignment, you will be implementing image processing operations
+based on convolution. You will be able to scale, blur, and sharpen
+images, just like Photoshop. You will be able to create effects like
+this:</p>
+
+<p><img src="docs/bananas-scale-50.png" alt="Bananas scaled" />
+<img src="docs/bananas-convolve-heart.png" alt="Bananas blurred with a heart" />
+<img src="docs/bananas-edges.png" alt="Bananas edge detected" /></p>
+
+<p>Although these effects look fancy, they are all based on the same
+operation: convolution.</p>
+
+<h2 id="rubric:">Rubric:</h2>
+
+<p><em>Note: This assignment is scored out of 100. There are 135 points
+enumerated below, providing several paths to 100. You could implement
+<code>convolve()</code>, <code>blur_box()</code>, <code>scale()</code>, and <code>edge_detect()</code>. Or you could skip
+one of them and implement <code>sharpen()</code> and one of the performance
+enhancements.</em></p>
+
+<ol>
+<li><p><strong>(25 points)</strong> Convolve with an arbitrary 2D filter image. The function
+signature is:</p>
+
+<pre><code>// Convolves the `input` image with `filter`,
+// saving the result into `output`.
+// NOTE: This function assumes that `filter` is greyscale
+// (has the same values for red, green, and blue).
+void convolve( const QImage&amp; input, const QImage&amp; filter, QImage&amp; output
+);
+</code></pre>
+
+<p>This requires a quadruple for loop. There is no easy way around slow
+$O(n \cdot \text{radius}^{2})$ running time ($n$ is the number
+of input image pixels). There is a folder of interesting filter images
+in the handout. The <code>main()</code> function ensures that the values in the
+filter image are greyscale, meaning that the same numbers are stored for
+red, green, and blue. Because most image formats store their pixel
+values as 8-bit numbers, assume that the filter images are stored
+<strong>not</strong> normalized. Normalize them when you apply them by dividing by
+the sum of all pixel values. Don&#8217;t forget that the indices into filter
+are negated. See the tip below about <code>.mirrored()</code>.</p></li>
+<li><p><strong>(25 points)</strong> Blur with a box filter. Blurring with a box filter is
+one of the simplest kinds of convolution there is. It simply replaces
+each pixel with the unweighted average of nearby pixels. For a box,
+nearby pixels are those whose x or y coordinates are differ by at most
+radius. The function signature is:</p>
+
+<pre><code>// Applies a box blur with `radius` to `input`, saving the result
+// into `output`.
+void blur_box( const QImage&amp; input, int radius, QImage&amp; output );
+</code></pre>
+
+<p>A naive implementation of this takes
+$O(n \cdot \text{radius}^{2})$ running time ($n$ is the number of
+input image pixels). You must implement it with faster running time.
+Because a 2D box filter is separable, you can reduce the running time to
+$O(n \cdot \text{radius})$ by first blurring horizontally and
+then blurring vertically (or vice versa).</p>
+
+<ol>
+<li><strong>(10 additional points)</strong> Because the box filter is unweighted, it is
+theoretically possible to achieve $O(n)$ running time.</li>
+</ol></li>
+<li><p><strong>(15 points)</strong> Sharpen the image. Sharpening is the opposite of
+blurring. Therefore, a simple formula for a sharpened image is:
+<em>sharpen(I) = (1 + α)·I - α·blur(I)</em>,
+where <em>α</em> controls the amount of sharpening. You can use your box
+blur, and then compute the formula per-pixel. The function signature
+is:</p>
+
+<pre><code>// Sharpens the `input` image by moving `amount` away from a blur with `radius`.
+// Saves the result into `output`.
+void sharpen( const QImage&amp; input, real amount, int radius, QImage&amp; output );
+</code></pre></li>
+<li><p><strong>(25 points)</strong> Scale the image to a new dimension. The function
+signature is:</p>
+
+<pre><code>// Scales the `input` image to the new dimensions, saving the result
+// into `output`.
+void scale( const QImage&amp; input, int new_width, int new_height, QImage&amp; output );
+</code></pre>
+
+<p>In theory, scaling reconstructs a continuous function from the input
+image and then resamples it at evenly spaced locations (the pixels of
+the output image). The reconstructed continuous function is obtained by
+convolving a continuous filter with our discrete input image. Note that
+we only need the values of the reconstructed function at output pixel
+locations. Therefore, you will iterate over the pixels of the output
+image and compute the convolution of a continuous filter with the input
+image. The only difference between convolving with a discrete filter
+(array) <em>b</em> versus a continuous filter <em>f</em> is that you will make a
+function call <em>f(x)</em> or <em>f(x,y)</em> to access the filter values instead
+of looking them up in an array <em>b</em>[x] or <em>b</em>[x,y]. The filter you
+will use is a triangle function:</p>
+
+<pre><code>triangle( radius, x ) = max( 0, 1 - | x/radius | )
+</code></pre>
+
+<p>$$\text{triangle}( \textit{radius}, x ) = \text{max}\left( 0, 1 - \left| \frac{x}{\text{radius}} \right| \right)$$</p>
+
+<p>You will need to normalize this on-the-fly.<br/>
+In 2D, the filter is</p>
+
+<pre><code> f(x,y) = triangle( radius_x, x ) * triangle( radius_y, y )
+</code></pre>
+
+<p>$$f(x,y ) = \text{triangle}( \text{radius}_x, x ) \cdot \text{triangle}( \text{radius}_y, y )$$</p>
+
+<p>By picking the right right radius for x and y, the scaling function will
+eliminate high frequencies that cause aliasing artifacts. The formula
+for the radius is:</p>
+
+<pre><code>if new_size &gt; old_size: radius = 1
+else: radius = old_size/new_size
+</code></pre>
+
+<p>$$\text{radius} =
+\begin{cases}
+1 &amp; \text{if} \quad \text{new_size} &gt; \text{old_size} \\
+\frac{ \text{ old_size } }{ \text{ new_size } } &amp; \text{otherwise}
+\end{cases}$$</p>
+
+<p>where size is the width or height.
+Pseudocode for 1D image resizing can be found on slide 53 of <em>10 Signal
+Processing</em> or in the book (<em>Fundamentals of Computer Graphics</em>, Chapter
+9 <em>Signal Processing</em>).</p>
+
+<ol>
+<li><strong>(additional 10 points)</strong> The triangle filter is separable, so you can
+implement scaling in $O( n \cdot \text{radius} )$ time by first
+scaling horizontally and then scaling vertically (or vice versa).</li>
+</ol></li>
+<li><p><strong>(25 points)</strong> Detect edges. Edge detection can be implemented in
+various ways. The reference implementation uses 1D convolution with the
+filter [ &#8211;1 0 1 ]. Convolving with the filter horizontally produces a
+$D_x$ image and vertically produces a $D_y$ image. Note that this filter
+cannot be normalized, since it sums to 0. Also note that this filter
+will produce positive and negative values; store the absolute value. The
+final value for a pixel of the edge detected image is
+$\sqrt{ D_x^2 + D_y^2 }$. The function signature is:</p>
+
+<pre><code>// Performs edge detection on the `input` image.
+// Stores the result into `output`.
+void edge_detect( const QImage&amp; input, QImage&amp; output );
+</code></pre></li>
+<li><p><strong>(additional ? points)</strong> Additional operations. Make suggestions!</p></li>
+</ol>
+
+<h2 id="tips">Tips</h2>
+
+<ul>
+<li><p>All the code you write will go into <code>convolution.cpp</code>.</p></li>
+<li><p>Convolution operates on the red, green, and blue channels of the image
+independently. Ignore alpha. (Even preserving alpha would produce the
+wrong result.)</p></li>
+<li><p>You will want almost all of the filters you will implement to be
+normalized, meaning that their values sum to 1. Only edge detection
+makes use of filters which sum to 0. Don&#8217;t normalize edge detection
+filters. The <code>convolve()</code> function takes in unnormalized filters; you can
+normalize on-the-fly.</p></li>
+<li><p>It is easy to normalize on-the-fly by keeping track of the denominator.</p></li>
+<li><p>When convolving near the edges of an image, only apply the portion of
+the filter that lies in the image (ignore out-of-bounds pixels). When
+you do this, you will be ignoring part of the filter. Therefore, the
+part of the filter that you do use will no longer sum to one. You will
+need to renormalize by dividing by the sum of non-ignored filter values.</p></li>
+<li><p>Do not perform arithmetic operations on a QRgb. First extract the components
+to integers or floating point types.</p></li>
+<li><p>Don&#8217;t store partial sums in a <code>QRgb</code>, which have only 8-bit precision for
+each channel. If your partial sums are real numbers, you would lose a
+lot of precision if you round after each addition. If you are
+normalizing on-the-fly, the partial sums may overflow, because the sum
+of 8-bit numbers often won&#8217;t fit into another 8-bit number. When storing
+the results back into a <code>QRgb</code>, make sure values are in the range
+[0,255]. You can use <code>min()</code> and <code>max()</code> or the provided <code>clamp()</code> helper
+function.</p></li>
+<li><p>You can&#8217;t perform convolution in-place, because you will be overwriting
+values that you still need to read. If a function makes use of separable
+convolution, don&#8217;t forget to create a temporary intermediate image or
+array (<code>std::vector&lt;int&gt;</code>) as necessary.</p></li>
+<li><p>You can halve the amount of code you need to write for separable filters
+by iterating with pointers to pixel data. See the discussion of
+<code>image.scanLine()</code> below. For non-separable functions, working with
+pointers to pixel data will not reduce the amount of code you write
+(though the code will run faster).</p></li>
+<li><p>Convolution, correctly defined, says that you iterate over the filter
+with flipped (negated) coordinates. This only matters for unsymmetrical
+filters. The only ones you will encounter are <code>heart.png</code> and
+<code>direction.png</code>. You should use <code>filter.mirrored( true, true )</code> instead of
+<code>filter</code> to get the correct results.</p></li>
+<li><p>You can compare your output in a few ways:</p>
+
+<ul>
+<li><p>Open both images in a viewer which lets you flip back and forth in-place with, for example, the right and left arrow keys. You could, for example, open them in browser tabs and switch tabs back-and-forth. Rapidly switching back and forth in-place is a good technique to visually understand the differences.</p></li>
+<li><p>With the built-in function <code>difference()</code>, accessible from the command line via:</p>
+
+<pre><code>./imageprocessing difference input_image1.png input_image2.png image_out.png
+</code></pre></li>
+<li><p>With the Python script provided in the <code>examples</code> directory:</p>
+
+<pre><code>python imgdiff.py input_image1.png input_image2.png image_out.png
+</code></pre></li>
+<li><p>Do not use a program which returns true or false based on whether all the bits match. Slightly different implementations can round to slightly different answers, which is fine. Our spec is not bit-exact (and arguably should not be).</p></li>
+</ul></li>
+</ul>
+
+<h2 id="qtfunctionsyouneedforthisassignment">Qt functions you need for this assignment</h2>
+
+<p><strong>QImage:</strong></p>
+
+<ul>
+<li><p><code>image.pixel(x,y)</code> returns the <code>QRgb</code> color for pixel x,y of a <code>QImage image</code>.</p></li>
+<li><p><code>image.setPixel(x,y,c)</code> sets the pixel to a <code>QRgb</code> color <code>c</code>.</p></li>
+<li><p><code>image.width()</code> and <code>image.height()</code> return the width and height of the
+image.</p></li>
+<li><p><code>image.scanLine(y)</code> returns a pointer to the array of <code>QRgb</code> pixel data for
+row y. That pointer points to the pixel (0,y). If you have a pointer to
+a pixel <code>QRgb* pix</code>, the next pixel in the row is <code>pix+1</code> and the next
+pixel in the column is <code>pix+image.bytesPerLine()/4</code>. Therefore, the
+pointer to the first pixel in column x is <code>(QRgb*)image.scanLine(0)+x</code>.
+By keeping track of the <em>stride</em> between pixels, you can write general
+functions that iterate over either rows or columns. Such a function
+would take a pointer to the first pixel, the stride between pixels, and
+the number of pixels. This can substantially reduce the amount of code
+you need to write when you only need to iterate over an image&#8217;s rows or
+columns, as opposed to iterating over a square region. The code will
+also run faster. For an example of how to use these methods, see the
+<code>greyscale()</code> function.</p></li>
+<li><p><code>QImage( width, height, QImage::Format_ARGB32 )</code> creates a blank image
+full of <code>QRgb</code> pixels.</p></li>
+<li><p><code>image.mirrored( true, true )</code> returns a copy of the image mirrored
+horizontally and vertically.</p></li>
+</ul>
+
+<p><code>sqrt(x)</code>, <code>std::min(a,b)</code>, <code>std::max(a,b)</code>. These are not Qt functions.
+They are part of C&#8217;s <code>math.h</code> and C++&#8217;s <algorithm>. Nevertheless, you
+will find them useful. Note that <code>std::min</code> and <code>std::max</code> require both
+parameters to have the exact same type. If not, you will get a very long
+compiler error since they are generic functions written using C++
+templates.</p>
+
+<p><strong>QRgb.</strong> To get the red, green, blue, and alpha components of a QRgb
+color <code>c</code> as 8-bit values, use <code>qRed(c)</code>, <code>qGreen(c)</code>, <code>qBlue(c)</code>, and
+<code>qAlpha(c)</code>. In this assignment, we are ignoring alpha. To create an RGB
+<code>QRgb</code> color, use <code>qRgb( red, green, blue )</code> with 8-bit parameters. Note
+that <code>QRgb</code> is not a class or a struct. It is a <code>typedef</code> for an <code>unsigned int</code>,
+and those functions are just getting and setting the appropriate
+bytes. The header <code>qrgb.h</code> is very short and readable. Here is most of
+it:</p>
+
+<pre><code class="c++">typedef unsigned int QRgb;                        // RGB triplet
+
+inline int qRed(QRgb rgb)                // get red part of RGB
+{ return ((rgb &gt;&gt; 16) &amp; 0xff); }
+
+inline int qGreen(QRgb rgb)                // get green part of RGB
+{ return ((rgb &gt;&gt; 8) &amp; 0xff); }
+
+inline int qBlue(QRgb rgb)                // get blue part of RGB
+{ return (rgb &amp; 0xff); }
+
+inline int qAlpha(QRgb rgb)                // get alpha part of RGBA
+{ return rgb &gt;&gt; 24; }
+
+inline QRgb qRgb(int r, int g, int b)// set RGB value
+{ return (0xffu &lt;&lt; 24) | ((r &amp; 0xffu) &lt;&lt; 16) | ((g &amp; 0xffu) &lt;&lt; 8) | (b &amp; 0xffu); }
+
+inline QRgb qRgba(int r, int g, int b, int a)// set RGBA value
+{ return ((a &amp; 0xffu) &lt;&lt; 24) | ((r &amp; 0xffu) &lt;&lt; 16) | ((g &amp; 0xffu) &lt;&lt; 8) | (b &amp; 0xffu); }</code></pre>
+    </div>
+</body>
+</html>

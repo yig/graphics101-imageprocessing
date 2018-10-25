@@ -282,6 +282,9 @@ you do this, you will be ignoring part of the filter. Therefore, the
 part of the filter that you do use will no longer sum to one. You will
 need to renormalize by dividing by the sum of non-ignored filter values.
 
+* Do not perform arithmetic operations on a QRgb. First extract the components
+to integers or floating point types.
+
 * Don't store partial sums in a `QRgb`, which have only 8-bit precision for
 each channel. If your partial sums are real numbers, you would lose a
 lot of precision if you round after each addition. If you are
@@ -307,6 +310,20 @@ with flipped (negated) coordinates. This only matters for unsymmetrical
 filters. The only ones you will encounter are `heart.png` and
 `direction.png`. You should use `filter.mirrored( true, true )` instead of
 `filter` to get the correct results.
+
+* You can compare your output in a few ways:
+
+    * Open both images in a viewer which lets you flip back and forth in-place with, for example, the right and left arrow keys. You could, for example, open them in browser tabs and switch tabs back-and-forth. Rapidly switching back and forth in-place is a good technique to visually understand the differences.
+
+    * With the built-in function `difference()`, accessible from the command line via:
+
+            ./imageprocessing difference input_image1.png input_image2.png image_out.png
+
+    * With the Python script provided in the `examples` directory:
+
+            python imgdiff.py input_image1.png input_image2.png image_out.png
+
+    * Do not use a program which returns true or false based on whether all the bits match. Slightly different implementations can round to slightly different answers, which is fine. Our spec is not bit-exact (and arguably should not be).
 
 Qt functions you need for this assignment
 -----------------------------------------
@@ -350,8 +367,8 @@ templates.
 color `c` as 8-bit values, use `qRed(c)`, `qGreen(c)`, `qBlue(c)`, and
 `qAlpha(c)`. In this assignment, we are ignoring alpha. To create an RGB
 `QRgb` color, use `qRgb( red, green, blue )` with 8-bit parameters. Note
-that `QRgb` is not a class or a struct. It is a `typedef` for an `unsigned
-int`, and those functions are just getting and setting the appropriate
+that `QRgb` is not a class or a struct. It is a `typedef` for an `unsigned int`,
+and those functions are just getting and setting the appropriate
 bytes. The header `qrgb.h` is very short and readable. Here is most of
 it:
 

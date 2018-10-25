@@ -14,6 +14,10 @@ typedef float real;
 // Converts the `input` image to greyscale, saving the result into `output`.
 void greyscale( const QImage& input, QImage& output );
 
+// Subtracts `input1` from `input2`, saving the absolute value of the result into `output`.
+// This function assumes that the dimensions of input1 and input2 match.
+void difference( const QImage& input1, const QImage& input2, QImage& output );
+
 // Applies a box blur with `radius` to `input`, saving the result
 // into `output`.
 void blur_box( const QImage& input, int radius, QImage& output );

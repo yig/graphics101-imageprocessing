@@ -31,6 +31,7 @@ void usage( const char* argv0 ) {
     std::cerr << "Usage: " << argv0 << " sharpen amount radius input_image.png image_out.png\n";
     std::cerr << "Usage: " << argv0 << " edges input_image.png image_out.png\n";
     std::cerr << "Usage: " << argv0 << " grey input_image.png image_out.png\n";
+    std::cerr << "Usage: " << argv0 << " difference input_image1.png input_image2.png image_out.png\n";
     std::exit(-1);
 }
 
@@ -170,6 +171,36 @@ int main( int argc, char* argv[] ) {
         ensureNotIndexed( input );
         QImage output;
         greyscale( input, output );
+        output.save( outpath );
+        std::cout << "Saved: " << outpath << std::endl;
+    }
+    else if( command == "difference" ) {
+        if( argc != 5 ) usage( argv[0] );
+        
+        const char* inpath1( argv[2] );
+        const char* inpath2( argv[3] );
+        const char* outpath( argv[4] );
+        
+        QImage image1;
+        if( !image1.load( inpath1 ) ) {
+            std::cerr << "Error loading input image 1: " << inpath1 << '\n';
+            usage( argv[0] );
+        }
+        ensureNotIndexed( image1 );
+        QImage image2;
+        if( !image2.load( inpath2 ) ) {
+            std::cerr << "Error loading input image 2: " << inpath2 << '\n';
+            usage( argv[0] );
+        }
+        ensureNotIndexed( image2 );
+        
+        if( image1.width() != image2.width() || image1.height() != image2.height() ) {
+            std::cerr << "Error: Input images have different dimensions.\n";
+            usage( argv[0] );
+        }
+        
+        QImage output;
+        difference( image1, image2, output );
         output.save( outpath );
         std::cout << "Saved: " << outpath << std::endl;
     }

@@ -1,6 +1,7 @@
 #include "convolution.h"
 
 #include <cassert>
+#include <cstdlib>
 #include <cmath>
 
 using namespace graphics101;
@@ -112,6 +113,34 @@ void greyscale( const QImage& input, QImage& output ) {
             const int grey = ( qRed(pix) + qGreen(pix) + qBlue(pix) )/3;
             
             col_out[ j*stride_out ] = qRgb( grey, grey, grey );
+        }
+    }
+}
+
+// Subtracts `input1` from `input2`, saving the absolute value of the result into `output`.
+// This function assumes that the dimensions of input1 and input2 match.
+void difference( const QImage& input1, const QImage& input2, QImage& output ) {
+    assert( input1.format() == QImage::Format_ARGB32 );
+    assert( input2.format() == QImage::Format_ARGB32 );
+    assert( input1.width() == input2.width() );
+    assert( input1.height() == input2.height() );
+    
+    // Your code goes here.
+    
+    // Allocate an output image the same size as the input.
+    output = QImage( input1.width(), input1.height(), QImage::Format_ARGB32 );
+    
+    // 1 Using input.pixel()
+    for( int j = 0; j < input1.height(); ++j ) {
+        for( int i = 0; i < input1.width(); ++i ) {
+            const QRgb pix1 = input1.pixel( i,j );
+            const QRgb pix2 = input2.pixel( i,j );
+            
+            const int rdiff = abs( int( qRed  (pix1) ) - int( qRed  (pix2) ) );
+            const int gdiff = abs( int( qGreen(pix1) ) - int( qGreen(pix2) ) );
+            const int bdiff = abs( int( qBlue (pix1) ) - int( qBlue (pix2) ) );
+            
+            output.setPixel( i,j, qRgb( rdiff, gdiff, bdiff ) );
         }
     }
 }
