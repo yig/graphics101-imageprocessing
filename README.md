@@ -77,7 +77,6 @@ with the name of each example). Copy your output `.png` files into a new
         ./imageprocessing convolve filters/quadratic.png balls.png balls-convolve-quadratic.png
         ./imageprocessing convolve filters/direction.png balls.png balls-convolve-direction.png
         ./imageprocessing convolve filters/heart.png balls.png balls-convolve-heart.png
-        ./imageprocessing convolve filters/heart-flip.png balls.png balls-convolve-heart-flip.png
 
 * The example images are:
 
