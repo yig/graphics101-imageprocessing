@@ -3,6 +3,7 @@
 #include <cassert>
 #include <cstdlib>
 #include <cmath>
+#include <functional> // std::function
 
 using namespace graphics101;
 
