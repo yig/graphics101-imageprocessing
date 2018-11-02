@@ -66,8 +66,7 @@ at the top. There are some suggested signatures.</p></li>
 <li><p>Build and run and test that it is working correctly. Qt Creator has a
 great debugger.</p></li>
 <li><p>Run the following commands on the provided example images (replace <code>balls</code>
-with the name of each example). Copy your output <code>.png</code> files into a new
-<code>output</code> subdirectory.</p>
+with the name of each example).</p>
 
 <pre><code>./imageprocessing grey balls.png balls-grey.png
 ./imageprocessing box 0 balls.png balls-box0.png
@@ -94,7 +93,6 @@ with the name of each example). Copy your output <code>.png</code> files into a 
 ./imageprocessing convolve filters/quadratic.png balls.png balls-convolve-quadratic.png
 ./imageprocessing convolve filters/direction.png balls.png balls-convolve-direction.png
 ./imageprocessing convolve filters/heart.png balls.png balls-convolve-heart.png
-./imageprocessing convolve filters/heart-flip.png balls.png balls-convolve-heart-flip.png
 </code></pre></li>
 <li><p>The example images are:</p>
 
@@ -124,10 +122,11 @@ have also provided the script <code>run_all_gen.py</code> I used to generate
 <li><code>run_all.bat</code></li>
 </ul></li>
 </ul></li>
-<li><p>When done, zip your entire <code>imageprocessing</code> directory along with the
-<code>output</code> subdirectory and a <code>Notes.txt</code> file as
+<li><p>When done, zip your entire <code>imageprocessing</code> directory and a <code>Notes.txt</code> file as
 <code>hw04_lastname_firstname.zip</code> and upload your solution to Blackboard
-before the deadline. Your <code>Notes.txt</code> should describe any known issues
+before the deadline. Do not include your output images; they take up a
+lot of space and the grader will regenerate them.
+Your <code>Notes.txt</code> should describe any known issues
 or extra features. Your <code>Notes.txt</code> should also note the names of
 people in the class who deserve a star for helping you (not by giving
 your their code!).</p></li>
@@ -174,8 +173,8 @@ void convolve( const QImage&amp; input, const QImage&amp; filter, QImage&amp; ou
 );
 </code></pre>
 
-<p>This requires a quadruple for loop. There is no easy way around slow
-$O(n \cdot \text{radius}^{2})$ running time ($n$ is the number
+<p>This requires a quadruple for loop. There is no easy way around slow O(n · radius²)
+running time (n is the number
 of input image pixels). There is a folder of interesting filter images
 in the handout. The <code>main()</code> function ensures that the values in the
 filter image are greyscale, meaning that the same numbers are stored for
@@ -196,15 +195,15 @@ void blur_box( const QImage&amp; input, int radius, QImage&amp; output );
 </code></pre>
 
 <p>A naive implementation of this takes
-$O(n \cdot \text{radius}^{2})$ running time ($n$ is the number of
+O(n · radius²) running time (n is the number of
 input image pixels). You must implement it with faster running time.
 Because a 2D box filter is separable, you can reduce the running time to
-$O(n \cdot \text{radius})$ by first blurring horizontally and
+O(n · radius) by first blurring horizontally and
 then blurring vertically (or vice versa).</p>
 
 <ol>
 <li><strong>(10 additional points)</strong> Because the box filter is unweighted, it is
-theoretically possible to achieve $O(n)$ running time.</li>
+theoretically possible to achieve O(n) running time.</li>
 </ol></li>
 <li><p><strong>(15 points)</strong> Sharpen the image. Sharpening is the opposite of
 blurring. Therefore, a simple formula for a sharpened image is:
@@ -272,7 +271,7 @@ Processing</em> or in the book (<em>Fundamentals of Computer Graphics</em>, Chap
 
 <ol>
 <li><strong>(additional 10 points)</strong> The triangle filter is separable, so you can
-implement scaling in $O( n \cdot \text{radius} )$ time by first
+implement scaling in O(n · radius) time by first
 scaling horizontally and then scaling vertically (or vice versa).</li>
 </ol></li>
 <li><p><strong>(25 points)</strong> Detect edges. Edge detection can be implemented in
@@ -393,25 +392,27 @@ and those functions are just getting and setting the appropriate
 bytes. The header <code>qrgb.h</code> is very short and readable. Here is most of
 it:</p>
 
-<pre><code class="c++">typedef unsigned int QRgb;                        // RGB triplet
+<p>```c++
+typedef unsigned int QRgb; // RGB triplet</p>
 
-inline int qRed(QRgb rgb)                // get red part of RGB
-{ return ((rgb &gt;&gt; 16) &amp; 0xff); }
+<p>inline int qRed(QRgb rgb) // get red part of RGB
+{ return ((rgb &gt;&gt; 16) &amp; 0xff); }</p>
 
-inline int qGreen(QRgb rgb)                // get green part of RGB
-{ return ((rgb &gt;&gt; 8) &amp; 0xff); }
+<p>inline int qGreen(QRgb rgb) // get green part of RGB
+{ return ((rgb &gt;&gt; 8) &amp; 0xff); }</p>
 
-inline int qBlue(QRgb rgb)                // get blue part of RGB
-{ return (rgb &amp; 0xff); }
+<p>inline int qBlue(QRgb rgb) // get blue part of RGB
+{ return (rgb &amp; 0xff); }</p>
 
-inline int qAlpha(QRgb rgb)                // get alpha part of RGBA
-{ return rgb &gt;&gt; 24; }
+<p>inline int qAlpha(QRgb rgb) // get alpha part of RGBA
+{ return rgb &gt;&gt; 24; }</p>
 
-inline QRgb qRgb(int r, int g, int b)// set RGB value
-{ return (0xffu &lt;&lt; 24) | ((r &amp; 0xffu) &lt;&lt; 16) | ((g &amp; 0xffu) &lt;&lt; 8) | (b &amp; 0xffu); }
+<p>inline QRgb qRgb(int r, int g, int b)// set RGB value
+{ return (0xffu &lt;&lt; 24) | ((r &amp; 0xffu) &lt;&lt; 16) | ((g &amp; 0xffu) &lt;&lt; 8) | (b &amp; 0xffu); }</p>
 
-inline QRgb qRgba(int r, int g, int b, int a)// set RGBA value
-{ return ((a &amp; 0xffu) &lt;&lt; 24) | ((r &amp; 0xffu) &lt;&lt; 16) | ((g &amp; 0xffu) &lt;&lt; 8) | (b &amp; 0xffu); }</code></pre>
+<p>inline QRgb qRgba(int r, int g, int b, int a)// set RGBA value
+{ return ((a &amp; 0xffu) &lt;&lt; 24) | ((r &amp; 0xffu) &lt;&lt; 16) | ((g &amp; 0xffu) &lt;&lt; 8) | (b &amp; 0xffu); }
+```</p>
     </div>
 </body>
 </html>

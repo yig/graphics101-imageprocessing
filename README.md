@@ -49,8 +49,7 @@ at the top. There are some suggested signatures.
 great debugger.
 
 * Run the following commands on the provided example images (replace `balls`
-with the name of each example). Copy your output `.png` files into a new
-`output` subdirectory.
+with the name of each example).
 
         ./imageprocessing grey balls.png balls-grey.png
         ./imageprocessing box 0 balls.png balls-box0.png
@@ -97,10 +96,11 @@ have also provided the script `run_all_gen.py` I used to generate
 `run_all.HOW` to `run_all.bat` you can then type:
         * `run_all.bat`
 
-* When done, zip your entire `imageprocessing` directory along with the
-`output` subdirectory and a `Notes.txt` file as
+* When done, zip your entire `imageprocessing` directory and a `Notes.txt` file as
 `hw04_lastname_firstname.zip` and upload your solution to Blackboard
-before the deadline. Your `Notes.txt` should describe any known issues
+before the deadline. Do not include your output images; they take up a
+lot of space and the grader will regenerate them.
+Your `Notes.txt` should describe any known issues
 or extra features. Your `Notes.txt` should also note the names of
 people in the class who deserve a star for helping you (not by giving
 your their code!).
@@ -148,8 +148,8 @@ signature is:
         void convolve( const QImage& input, const QImage& filter, QImage& output
         );
 
-    This requires a quadruple for loop. There is no easy way around slow
-$O(n \cdot \text{radius}^{2})$ running time ($n$ is the number
+    This requires a quadruple for loop. There is no easy way around slow O(n · radius²)
+running time (n is the number
 of input image pixels). There is a folder of interesting filter images
 in the handout. The `main()` function ensures that the values in the
 filter image are greyscale, meaning that the same numbers are stored for
@@ -170,14 +170,14 @@ radius. The function signature is:
         void blur_box( const QImage& input, int radius, QImage& output );
 
     A naive implementation of this takes
-$O(n \cdot \text{radius}^{2})$ running time ($n$ is the number of
+O(n · radius²) running time (n is the number of
 input image pixels). You must implement it with faster running time.
 Because a 2D box filter is separable, you can reduce the running time to
-$O(n \cdot \text{radius})$ by first blurring horizontally and
+O(n · radius) by first blurring horizontally and
 then blurring vertically (or vice versa).
 
     1. **(10 additional points)** Because the box filter is unweighted, it is
-theoretically possible to achieve $O(n)$ running time.
+theoretically possible to achieve O(n) running time.
 
 3. **(15 points)** Sharpen the image. Sharpening is the opposite of
 blurring. Therefore, a simple formula for a sharpened image is:
@@ -240,7 +240,7 @@ Processing* or in the book (*Fundamentals of Computer Graphics*, Chapter
 9 *Signal Processing*).
 
     1. **(additional 10 points)** The triangle filter is separable, so you can
-implement scaling in $O( n \cdot \text{radius} )$ time by first
+implement scaling in O(n · radius) time by first
 scaling horizontally and then scaling vertically (or vice versa).
 
 5. **(25 points)** Detect edges. Edge detection can be implemented in
