@@ -1,0 +1,156 @@
+grey balls.png balls-reference/balls-grey.png
+box 0 balls.png balls-reference/balls-box0.png
+box 3 balls.png balls-reference/balls-box3.png
+box 25 balls.png balls-reference/balls-box25.png
+edges balls.png balls-reference/balls-edges.png
+sharpen 1 5 balls.png balls-reference/balls-sharpen-1-5.png
+sharpen 2 5 balls.png balls-reference/balls-sharpen-2-5.png
+sharpen 2 10 balls.png balls-reference/balls-sharpen-2-10.png
+scale 100 100 balls.png balls-reference/balls-scale-100.png
+scale 50 100 balls.png balls-reference/balls-scale-50w.png
+scale 10 100 balls.png balls-reference/balls-scale-10w.png
+scale 100 50 balls.png balls-reference/balls-scale-50h.png
+scale 100 10 balls.png balls-reference/balls-scale-10h.png
+scale 50 50 balls.png balls-reference/balls-scale-50.png
+scale 10 10 balls.png balls-reference/balls-scale-10.png
+scale 200 200 balls.png balls-reference/balls-scale-200.png
+scale 50 200 balls.png balls-reference/balls-scale-50w-200h.png
+scale 200 50 balls.png balls-reference/balls-scale-200w-50h.png
+convolve filters/identity.png balls.png balls-reference/balls-convolve-identity.png
+convolve filters/box3.png balls.png balls-reference/balls-convolve-box3.png
+convolve filters/box25.png balls.png balls-reference/balls-convolve-box25.png
+convolve filters/linear.png balls.png balls-reference/balls-convolve-linear.png
+convolve filters/quadratic.png balls.png balls-reference/balls-convolve-quadratic.png
+convolve filters/direction.png balls.png balls-reference/balls-convolve-direction.png
+convolve filters/heart.png balls.png balls-reference/balls-convolve-heart.png
+
+grey bananas.png bananas-reference/bananas-grey.png
+box 0 bananas.png bananas-reference/bananas-box0.png
+box 3 bananas.png bananas-reference/bananas-box3.png
+box 25 bananas.png bananas-reference/bananas-box25.png
+edges bananas.png bananas-reference/bananas-edges.png
+sharpen 1 5 bananas.png bananas-reference/bananas-sharpen-1-5.png
+sharpen 2 5 bananas.png bananas-reference/bananas-sharpen-2-5.png
+sharpen 2 10 bananas.png bananas-reference/bananas-sharpen-2-10.png
+scale 100 100 bananas.png bananas-reference/bananas-scale-100.png
+scale 50 100 bananas.png bananas-reference/bananas-scale-50w.png
+scale 10 100 bananas.png bananas-reference/bananas-scale-10w.png
+scale 100 50 bananas.png bananas-reference/bananas-scale-50h.png
+scale 100 10 bananas.png bananas-reference/bananas-scale-10h.png
+scale 50 50 bananas.png bananas-reference/bananas-scale-50.png
+scale 10 10 bananas.png bananas-reference/bananas-scale-10.png
+scale 200 200 bananas.png bananas-reference/bananas-scale-200.png
+scale 50 200 bananas.png bananas-reference/bananas-scale-50w-200h.png
+scale 200 50 bananas.png bananas-reference/bananas-scale-200w-50h.png
+convolve filters/identity.png bananas.png bananas-reference/bananas-convolve-identity.png
+convolve filters/box3.png bananas.png bananas-reference/bananas-convolve-box3.png
+convolve filters/box25.png bananas.png bananas-reference/bananas-convolve-box25.png
+convolve filters/linear.png bananas.png bananas-reference/bananas-convolve-linear.png
+convolve filters/quadratic.png bananas.png bananas-reference/bananas-convolve-quadratic.png
+convolve filters/direction.png bananas.png bananas-reference/bananas-convolve-direction.png
+convolve filters/heart.png bananas.png bananas-reference/bananas-convolve-heart.png
+
+grey wave.png wave-reference/wave-grey.png
+box 0 wave.png wave-reference/wave-box0.png
+box 3 wave.png wave-reference/wave-box3.png
+box 25 wave.png wave-reference/wave-box25.png
+edges wave.png wave-reference/wave-edges.png
+sharpen 1 5 wave.png wave-reference/wave-sharpen-1-5.png
+sharpen 2 5 wave.png wave-reference/wave-sharpen-2-5.png
+sharpen 2 10 wave.png wave-reference/wave-sharpen-2-10.png
+scale 100 100 wave.png wave-reference/wave-scale-100.png
+scale 50 100 wave.png wave-reference/wave-scale-50w.png
+scale 10 100 wave.png wave-reference/wave-scale-10w.png
+scale 100 50 wave.png wave-reference/wave-scale-50h.png
+scale 100 10 wave.png wave-reference/wave-scale-10h.png
+scale 50 50 wave.png wave-reference/wave-scale-50.png
+scale 10 10 wave.png wave-reference/wave-scale-10.png
+scale 200 200 wave.png wave-reference/wave-scale-200.png
+scale 50 200 wave.png wave-reference/wave-scale-50w-200h.png
+scale 200 50 wave.png wave-reference/wave-scale-200w-50h.png
+convolve filters/identity.png wave.png wave-reference/wave-convolve-identity.png
+convolve filters/box3.png wave.png wave-reference/wave-convolve-box3.png
+convolve filters/box25.png wave.png wave-reference/wave-convolve-box25.png
+convolve filters/linear.png wave.png wave-reference/wave-convolve-linear.png
+convolve filters/quadratic.png wave.png wave-reference/wave-convolve-quadratic.png
+convolve filters/direction.png wave.png wave-reference/wave-convolve-direction.png
+convolve filters/heart.png wave.png wave-reference/wave-convolve-heart.png
+
+grey wikipedia.png wikipedia-reference/wikipedia-grey.png
+box 0 wikipedia.png wikipedia-reference/wikipedia-box0.png
+box 3 wikipedia.png wikipedia-reference/wikipedia-box3.png
+box 25 wikipedia.png wikipedia-reference/wikipedia-box25.png
+edges wikipedia.png wikipedia-reference/wikipedia-edges.png
+sharpen 1 5 wikipedia.png wikipedia-reference/wikipedia-sharpen-1-5.png
+sharpen 2 5 wikipedia.png wikipedia-reference/wikipedia-sharpen-2-5.png
+sharpen 2 10 wikipedia.png wikipedia-reference/wikipedia-sharpen-2-10.png
+scale 100 100 wikipedia.png wikipedia-reference/wikipedia-scale-100.png
+scale 50 100 wikipedia.png wikipedia-reference/wikipedia-scale-50w.png
+scale 10 100 wikipedia.png wikipedia-reference/wikipedia-scale-10w.png
+scale 100 50 wikipedia.png wikipedia-reference/wikipedia-scale-50h.png
+scale 100 10 wikipedia.png wikipedia-reference/wikipedia-scale-10h.png
+scale 50 50 wikipedia.png wikipedia-reference/wikipedia-scale-50.png
+scale 10 10 wikipedia.png wikipedia-reference/wikipedia-scale-10.png
+scale 200 200 wikipedia.png wikipedia-reference/wikipedia-scale-200.png
+scale 50 200 wikipedia.png wikipedia-reference/wikipedia-scale-50w-200h.png
+scale 200 50 wikipedia.png wikipedia-reference/wikipedia-scale-200w-50h.png
+convolve filters/identity.png wikipedia.png wikipedia-reference/wikipedia-convolve-identity.png
+convolve filters/box3.png wikipedia.png wikipedia-reference/wikipedia-convolve-box3.png
+convolve filters/box25.png wikipedia.png wikipedia-reference/wikipedia-convolve-box25.png
+convolve filters/linear.png wikipedia.png wikipedia-reference/wikipedia-convolve-linear.png
+convolve filters/quadratic.png wikipedia.png wikipedia-reference/wikipedia-convolve-quadratic.png
+convolve filters/direction.png wikipedia.png wikipedia-reference/wikipedia-convolve-direction.png
+convolve filters/heart.png wikipedia.png wikipedia-reference/wikipedia-convolve-heart.png
+
+grey puppy.png puppy-reference/puppy-grey.png
+box 0 puppy.png puppy-reference/puppy-box0.png
+box 3 puppy.png puppy-reference/puppy-box3.png
+box 25 puppy.png puppy-reference/puppy-box25.png
+edges puppy.png puppy-reference/puppy-edges.png
+sharpen 1 5 puppy.png puppy-reference/puppy-sharpen-1-5.png
+sharpen 2 5 puppy.png puppy-reference/puppy-sharpen-2-5.png
+sharpen 2 10 puppy.png puppy-reference/puppy-sharpen-2-10.png
+scale 100 100 puppy.png puppy-reference/puppy-scale-100.png
+scale 50 100 puppy.png puppy-reference/puppy-scale-50w.png
+scale 10 100 puppy.png puppy-reference/puppy-scale-10w.png
+scale 100 50 puppy.png puppy-reference/puppy-scale-50h.png
+scale 100 10 puppy.png puppy-reference/puppy-scale-10h.png
+scale 50 50 puppy.png puppy-reference/puppy-scale-50.png
+scale 10 10 puppy.png puppy-reference/puppy-scale-10.png
+scale 200 200 puppy.png puppy-reference/puppy-scale-200.png
+scale 50 200 puppy.png puppy-reference/puppy-scale-50w-200h.png
+scale 200 50 puppy.png puppy-reference/puppy-scale-200w-50h.png
+convolve filters/identity.png puppy.png puppy-reference/puppy-convolve-identity.png
+convolve filters/box3.png puppy.png puppy-reference/puppy-convolve-box3.png
+convolve filters/box25.png puppy.png puppy-reference/puppy-convolve-box25.png
+convolve filters/linear.png puppy.png puppy-reference/puppy-convolve-linear.png
+convolve filters/quadratic.png puppy.png puppy-reference/puppy-convolve-quadratic.png
+convolve filters/direction.png puppy.png puppy-reference/puppy-convolve-direction.png
+convolve filters/heart.png puppy.png puppy-reference/puppy-convolve-heart.png
+
+grey dot.png dot-reference/dot-grey.png
+box 0 dot.png dot-reference/dot-box0.png
+box 3 dot.png dot-reference/dot-box3.png
+box 25 dot.png dot-reference/dot-box25.png
+edges dot.png dot-reference/dot-edges.png
+sharpen 1 5 dot.png dot-reference/dot-sharpen-1-5.png
+sharpen 2 5 dot.png dot-reference/dot-sharpen-2-5.png
+sharpen 2 10 dot.png dot-reference/dot-sharpen-2-10.png
+scale 100 100 dot.png dot-reference/dot-scale-100.png
+scale 50 100 dot.png dot-reference/dot-scale-50w.png
+scale 10 100 dot.png dot-reference/dot-scale-10w.png
+scale 100 50 dot.png dot-reference/dot-scale-50h.png
+scale 100 10 dot.png dot-reference/dot-scale-10h.png
+scale 50 50 dot.png dot-reference/dot-scale-50.png
+scale 10 10 dot.png dot-reference/dot-scale-10.png
+scale 200 200 dot.png dot-reference/dot-scale-200.png
+scale 50 200 dot.png dot-reference/dot-scale-50w-200h.png
+scale 200 50 dot.png dot-reference/dot-scale-200w-50h.png
+convolve filters/identity.png dot.png dot-reference/dot-convolve-identity.png
+convolve filters/box3.png dot.png dot-reference/dot-convolve-box3.png
+convolve filters/box25.png dot.png dot-reference/dot-convolve-box25.png
+convolve filters/linear.png dot.png dot-reference/dot-convolve-linear.png
+convolve filters/quadratic.png dot.png dot-reference/dot-convolve-quadratic.png
+convolve filters/direction.png dot.png dot-reference/dot-convolve-direction.png
+convolve filters/heart.png dot.png dot-reference/dot-convolve-heart.png
+
