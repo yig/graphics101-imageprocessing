@@ -60,6 +60,22 @@ Usage: ./imageprocessing convolve filter.png input_image.png image_out.png
 Usage: ./imageprocessing sharpen amount radius input_image.png image_out.png
 Usage: ./imageprocessing edges input_image.png image_out.png
 Usage: ./imageprocessing grey input_image.png image_out.png
+Usage: ./imageprocessing batch commands.txt
+</code></pre></li>
+<li><p>The command <code>./imageprocessing batch commands.txt</code> runs each line
+in the file <code>commands.txt</code> as if those were the command line arguments.
+For example, if <code>commands.txt</code> is a file containing:</p>
+
+<pre><code>grey balls.png balls-grey.png
+box 0 balls.png balls-box0.png
+sharpen 2 5 balls.png balls-sharpen-2-5.png
+</code></pre>
+
+<p>then running <code>./imageprocessing batch commands.txt</code> is equivalent to manually running:</p>
+
+<pre><code>./imageprocessing grey balls.png balls-grey.png
+./imageprocessing box 0 balls.png balls-box0.png
+./imageprocessing sharpen 2 5 balls.png balls-sharpen-2-5.png
 </code></pre></li>
 <li><p>Add your code to <code>convolution.cpp</code>. You may wish to add helper functions
 at the top. There are some suggested signatures.</p></li>
@@ -103,25 +119,10 @@ with the name of each example).</p>
 <li><code>wave.png</code></li>
 <li><code>wikipedia.png</code></li>
 </ul></li>
-<li>I have provided a script of commands <code>run_all.HOW</code> that will run all of
-those commands for all the examples. You will likely have to modify it
-for your environment by changing the path to the convolve program. (I
-have also provided the script <code>run_all_gen.py</code> I used to generate
-<code>run_all.HOW</code>.)
-
-<ul>
-<li>On a unix machine (like a Mac), you can type:
-
-<ul>
-<li><code>sh run_all.HOW</code></li>
-</ul></li>
-<li>On a Windows machine, I believe that if you change the name of
-<code>run_all.HOW</code> to <code>run_all.bat</code> you can then type:
-
-<ul>
-<li><code>run_all.bat</code></li>
-</ul></li>
-</ul></li>
+<li><p>I have provided a file <code>run_all.txt</code> containing all of the commands
+for all of the examples. Run it via <code>./imageprocessing batch run_all.txt</code>.
+(I have also provided the script <code>run_all_gen.py</code> I used to generate
+<code>run_all.txt</code>.)</p></li>
 <li><p>When done, zip your entire <code>imageprocessing</code> directory and a <code>Notes.txt</code> file as
 <code>hw04_lastname_firstname.zip</code> and upload your solution to Blackboard
 before the deadline. Do not include your output images; they take up a
@@ -392,27 +393,25 @@ and those functions are just getting and setting the appropriate
 bytes. The header <code>qrgb.h</code> is very short and readable. Here is most of
 it:</p>
 
-<p>```c++
-typedef unsigned int QRgb; // RGB triplet</p>
+<pre><code class="c++">typedef unsigned int QRgb;                        // RGB triplet
 
-<p>inline int qRed(QRgb rgb) // get red part of RGB
-{ return ((rgb &gt;&gt; 16) &amp; 0xff); }</p>
+inline int qRed(QRgb rgb)                // get red part of RGB
+{ return ((rgb &gt;&gt; 16) &amp; 0xff); }
 
-<p>inline int qGreen(QRgb rgb) // get green part of RGB
-{ return ((rgb &gt;&gt; 8) &amp; 0xff); }</p>
+inline int qGreen(QRgb rgb)                // get green part of RGB
+{ return ((rgb &gt;&gt; 8) &amp; 0xff); }
 
-<p>inline int qBlue(QRgb rgb) // get blue part of RGB
-{ return (rgb &amp; 0xff); }</p>
+inline int qBlue(QRgb rgb)                // get blue part of RGB
+{ return (rgb &amp; 0xff); }
 
-<p>inline int qAlpha(QRgb rgb) // get alpha part of RGBA
-{ return rgb &gt;&gt; 24; }</p>
+inline int qAlpha(QRgb rgb)                // get alpha part of RGBA
+{ return rgb &gt;&gt; 24; }
 
-<p>inline QRgb qRgb(int r, int g, int b)// set RGB value
-{ return (0xffu &lt;&lt; 24) | ((r &amp; 0xffu) &lt;&lt; 16) | ((g &amp; 0xffu) &lt;&lt; 8) | (b &amp; 0xffu); }</p>
+inline QRgb qRgb(int r, int g, int b)// set RGB value
+{ return (0xffu &lt;&lt; 24) | ((r &amp; 0xffu) &lt;&lt; 16) | ((g &amp; 0xffu) &lt;&lt; 8) | (b &amp; 0xffu); }
 
-<p>inline QRgb qRgba(int r, int g, int b, int a)// set RGBA value
-{ return ((a &amp; 0xffu) &lt;&lt; 24) | ((r &amp; 0xffu) &lt;&lt; 16) | ((g &amp; 0xffu) &lt;&lt; 8) | (b &amp; 0xffu); }
-```</p>
+inline QRgb qRgba(int r, int g, int b, int a)// set RGBA value
+{ return ((a &amp; 0xffu) &lt;&lt; 24) | ((r &amp; 0xffu) &lt;&lt; 16) | ((g &amp; 0xffu) &lt;&lt; 8) | (b &amp; 0xffu); }</code></pre>
     </div>
 </body>
 </html>

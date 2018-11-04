@@ -41,6 +41,21 @@ like:
         Usage: ./imageprocessing sharpen amount radius input_image.png image_out.png
         Usage: ./imageprocessing edges input_image.png image_out.png
         Usage: ./imageprocessing grey input_image.png image_out.png
+        Usage: ./imageprocessing batch commands.txt
+
+* The command `./imageprocessing batch commands.txt` runs each line
+in the file `commands.txt` as if those were the command line arguments.
+For example, if `commands.txt` is a file containing:
+
+        grey balls.png balls-grey.png
+        box 0 balls.png balls-box0.png
+        sharpen 2 5 balls.png balls-sharpen-2-5.png
+
+    then running `./imageprocessing batch commands.txt` is equivalent to manually running:
+
+        ./imageprocessing grey balls.png balls-grey.png
+        ./imageprocessing box 0 balls.png balls-box0.png
+        ./imageprocessing sharpen 2 5 balls.png balls-sharpen-2-5.png
 
 * Add your code to `convolution.cpp`. You may wish to add helper functions
 at the top. There are some suggested signatures.
@@ -85,16 +100,10 @@ with the name of each example).
     * `wave.png`
     * `wikipedia.png`
 
-* I have provided a script of commands `run_all.HOW` that will run all of
-those commands for all the examples. You will likely have to modify it
-for your environment by changing the path to the convolve program. (I
-have also provided the script `run_all_gen.py` I used to generate
-`run_all.HOW`.)
-    * On a unix machine (like a Mac), you can type:
-        * `sh run_all.HOW`
-    * On a Windows machine, I believe that if you change the name of
-`run_all.HOW` to `run_all.bat` you can then type:
-        * `run_all.bat`
+* I have provided a file `run_all.txt` containing all of the commands
+for all of the examples. Run it via `./imageprocessing batch run_all.txt`.
+(I have also provided the script `run_all_gen.py` I used to generate
+`run_all.txt`.)
 
 * When done, zip your entire `imageprocessing` directory and a `Notes.txt` file as
 `hw04_lastname_firstname.zip` and upload your solution to Blackboard
