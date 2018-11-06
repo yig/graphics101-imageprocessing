@@ -57,6 +57,8 @@ For example, if `commands.txt` is a file containing:
         ./imageprocessing box 0 balls.png balls-box0.png
         ./imageprocessing sharpen 2 5 balls.png balls-sharpen-2-5.png
 
+    **Note:** The `batch` command cannot handle spaces in file names.
+
 * Add your code to `convolution.cpp`. You may wish to add helper functions
 at the top. There are some suggested signatures.
 
