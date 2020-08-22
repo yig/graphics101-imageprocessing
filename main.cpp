@@ -4,6 +4,7 @@
 #include <cassert> // assert()
 #include <fstream>
 #include <sstream>
+#include <vector>
 
 using namespace graphics101;
 
@@ -35,15 +36,14 @@ bool run_one_command( const std::vector< std::string >& args ) {
         const std::string& inpath( args[2] );
         const std::string& outpath( args[3] );
         
-        QImage input;
-        if( !input.load( inpath.c_str() ) ) {
+        Image input;
+        if( !input.load( inpath ) ) {
             std::cerr << "Error loading input image: " << inpath << '\n';
             return false;
         }
-        ensureNotIndexed( input );
-        QImage output;
+        Image output;
         blur_box( input, radius, output );
-        output.save( outpath.c_str() );
+        output.save( outpath );
         std::cout << "Saved: " << outpath << std::endl;
     }
     else if( command == "scale" ) {
@@ -60,20 +60,19 @@ bool run_one_command( const std::vector< std::string >& args ) {
         const std::string& inpath( args[3] );
         const std::string& outpath( args[4] );
         
-        QImage input;
-        if( !input.load( inpath.c_str() ) ) {
+        Image input;
+        if( !input.load( inpath ) ) {
             std::cerr << "Error loading input image: " << inpath << '\n';
             return false;
         }
-        ensureNotIndexed( input );
 
         // Add 0.5 to get rounding when we cast from floating point to integer.
         const int width = std::max( 1, int( (width_percent/100)*input.width() + 0.5 ) );
         const int height = std::max( 1, int( (height_percent/100)*input.height() + 0.5 ) );
 
-        QImage output;
+        Image output;
         scale( input, width, height, output );
-        output.save( outpath.c_str() );
+        output.save( outpath );
         std::cout << "Saved: " << outpath << std::endl;
     }
     else if( command == "convolve" ) {
@@ -83,26 +82,24 @@ bool run_one_command( const std::vector< std::string >& args ) {
         const std::string& inpath( args[2] );
         const std::string& outpath( args[3] );
         
-        QImage filter;
-        if( !filter.load( filterpath.c_str() ) ) {
+        Image filter;
+        if( !filter.load( filterpath ) ) {
             std::cerr << "Error loading filter image: " << filterpath << '\n';
             return false;
         }
-        ensureNotIndexed( filter );
         {
-            QImage tmp;
+            Image tmp;
             greyscale( filter, tmp );
             filter = tmp;
         }
-        QImage input;
-        if( !input.load( inpath.c_str() ) ) {
+        Image input;
+        if( !input.load( inpath ) ) {
             std::cerr << "Error loading input image: " << inpath << '\n';
             return false;
         }
-        ensureNotIndexed( input );
-        QImage output;
+        Image output;
         convolve( input, filter, output );
-        output.save( outpath.c_str() );
+        output.save( outpath );
         std::cout << "Saved: " << outpath << std::endl;
     }
     else if( command == "sharpen" ) {
@@ -116,15 +113,14 @@ bool run_one_command( const std::vector< std::string >& args ) {
         const std::string& inpath( args[3] );
         const std::string& outpath( args[4] );
         
-        QImage input;
-        if( !input.load( inpath.c_str() ) ) {
+        Image input;
+        if( !input.load( inpath ) ) {
             std::cerr << "Error loading input image: " << inpath << '\n';
             return false;
         }
-        ensureNotIndexed( input );
-        QImage output;
+        Image output;
         sharpen( input, amount, radius, output );
-        output.save( outpath.c_str() );
+        output.save( outpath );
         std::cout << "Saved: " << outpath << std::endl;
     }
     else if( command == "edges" ) {
@@ -133,15 +129,14 @@ bool run_one_command( const std::vector< std::string >& args ) {
         const std::string& inpath( args[1] );
         const std::string& outpath( args[2] );
         
-        QImage input;
-        if( !input.load( inpath.c_str() ) ) {
+        Image input;
+        if( !input.load( inpath ) ) {
             std::cerr << "Error loading input image: " << inpath << '\n';
             return false;
         }
-        ensureNotIndexed( input );
-        QImage output;
+        Image output;
         edge_detect( input, output );
-        output.save( outpath.c_str() );
+        output.save( outpath );
         std::cout << "Saved: " << outpath << std::endl;
     }
     else if( command == "grey" ) {
@@ -150,15 +145,14 @@ bool run_one_command( const std::vector< std::string >& args ) {
         const std::string& inpath( args[1] );
         const std::string& outpath( args[2] );
         
-        QImage input;
-        if( !input.load( inpath.c_str() ) ) {
+        Image input;
+        if( !input.load( inpath ) ) {
             std::cerr << "Error loading input image: " << inpath << '\n';
             return false;
         }
-        ensureNotIndexed( input );
-        QImage output;
+        Image output;
         greyscale( input, output );
-        output.save( outpath.c_str() );
+        output.save( outpath );
         std::cout << "Saved: " << outpath << std::endl;
     }
     else if( command == "difference" ) {
@@ -168,27 +162,25 @@ bool run_one_command( const std::vector< std::string >& args ) {
         const std::string& inpath2( args[2] );
         const std::string& outpath( args[3] );
         
-        QImage image1;
-        if( !image1.load( inpath1.c_str() ) ) {
+        Image image1;
+        if( !image1.load( inpath1 ) ) {
             std::cerr << "Error loading input image 1: " << inpath1 << '\n';
             return false;
         }
-        ensureNotIndexed( image1 );
-        QImage image2;
-        if( !image2.load( inpath2.c_str() ) ) {
+        Image image2;
+        if( !image2.load( inpath2 ) ) {
             std::cerr << "Error loading input image 2: " << inpath2 << '\n';
             return false;
         }
-        ensureNotIndexed( image2 );
         
         if( image1.width() != image2.width() || image1.height() != image2.height() ) {
             std::cerr << "Error: Input images have different dimensions.\n";
             return false;
         }
         
-        QImage output;
+        Image output;
         difference( image1, image2, output );
-        output.save( outpath.c_str() );
+        output.save( outpath );
         std::cout << "Saved: " << outpath << std::endl;
     }
     else if( command == "batch" ) {
