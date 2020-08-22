@@ -1,6 +1,23 @@
 Computer Graphics - Homework Assignment 4 - Image Processing
 ============================================================
 
+Overview:
+---------
+
+In this assignment, you will be implementing image processing operations
+based on convolution. You will be able to scale, blur, and sharpen
+images, just like Photoshop. You will be able to create effects like
+this:
+
+![Bananas scaled](docs/bananas-scale-50.png)
+![Bananas blurred with a heart](docs/bananas-convolve-heart.png)
+![Bananas edge detected](docs/bananas-edges.png)
+
+Although these effects look fancy, they are all based on the same
+operation: convolution.
+
+Background reading for this assignment: Chapter 9 *Signal Processing* from *Fundamentals of Computer Graphics (4th edition)* by Steve Marschner and Peter Shirley.
+
 Goals:
 ------
 
@@ -11,29 +28,16 @@ Goals:
 Getting Started & Handing In:
 -----------------------------
 
+* Download or clone this code repository. Don't fork it on GitHub, or else your code will be visible to everyone.
+
+* Follow the instructions to install a working development environment: <https://github.com/yig/graphics101> . You do not need to install Qt or any other external libraries for this assignment. The framework provides all the code you need.
+
 * The code will be written in C++. You are encouraged to write helper
 functions. They can eliminate a lot of redundant code.
 
-* The program is a command line program. It makes use of the open source
-Qt framework only for its QImage class for image loading and saving and
-pixel manipulation.
-
-* You should have already successfully installed the open source version
-of the Qt environment from the last assignment:
-<https://www.qt.io/download-open-source>
-(At the time of writing, version 5.11 is the newest version. Any 5.x
-version should work. The installer, by default, includes all versions of
-Qt. Save space by installing only the most recent version and a
-compiler.) Mac users with [Homebrew](https://brew.sh/)
-can alternatively install via: `brew install qt` and `brew cask install qt-creator`.
-
-* Download this assignment. This will create a folder named imageprocessing.
-Open the file named `imageprocessing.pro`. This should launch the Qt
-Creator development environment (IDE).
-
 * Build and run the code. The code should compile, but it will complain
-when running about not having enough arguments. You should see a message
-like:
+when running about not having enough arguments. The program is a command line program.
+You should see a message like:
 
         Usage: ./imageprocessing box radius input_image.png image_out.png
         Usage: ./imageprocessing scale width_percent height_percent input_image.png image_out.png
@@ -107,16 +111,15 @@ for all of the examples. Run it via `./imageprocessing batch run_all.txt`.
 (I have also provided the script `run_all_gen.py` I used to generate
 `run_all.txt`.)
 
-* When done, zip your entire `imageprocessing` directory and a `Notes.txt` file as
-`hw04_lastname_firstname.zip` and upload your solution to Blackboard
+* You are encouraged to share blooper images you create while implementing the assignment on Piazza.
+
+* Create a file named `Notes.txt` in the folder. Describe any known issues or extra features. Name people in the class who deserve a star for
+helping you (not by giving your their code!).
+
+* When done, zip your entire `imageprocessing` directory and your `Notes.txt` file as
+`hw04_lastname_firstname.zip`. Upload your solution to Blackboard
 before the deadline. Do not include your output images; they take up a
 lot of space and the grader will regenerate them.
-Your `Notes.txt` should describe any known issues
-or extra features. Your `Notes.txt` should also note the names of
-people in the class who deserve a star for helping you (not by giving
-your their code!).
-
-* The framework and libraries provide all the support code that you need.
 
 * **THIS IS AN INDIVIDUAL, NOT A GROUP ASSIGNMENT. That means all code
 written for this assignment should be original! Although you are
@@ -124,21 +127,6 @@ permitted to consult with each other while working on this assignment,
 code that is substantially the same will be considered cheating.** In your
 `Notes.txt`, please note who deserves a star (who helped you with the
 assignment).
-
-Overview:
----------
-
-In this assignment, you will be implementing image processing operations
-based on convolution. You will be able to scale, blur, and sharpen
-images, just like Photoshop. You will be able to create effects like
-this:
-
-![Bananas scaled](docs/bananas-scale-50.png)
-![Bananas blurred with a heart](docs/bananas-convolve-heart.png)
-![Bananas edge detected](docs/bananas-edges.png)
-
-Although these effects look fancy, they are all based on the same
-operation: convolution.
 
 Rubric:
 -------
@@ -156,7 +144,7 @@ signature is:
         // saving the result into `output`.
         // NOTE: This function assumes that `filter` is greyscale
         // (has the same values for red, green, and blue).
-        void convolve( const QImage& input, const QImage& filter, QImage& output
+        void convolve( const Image& input, const Image& filter, Image& output
         );
 
     This requires a quadruple for loop. There is no easy way around slow O(n · radius²)
@@ -178,7 +166,7 @@ radius. The function signature is:
 
         // Applies a box blur with `radius` to `input`, saving the result
         // into `output`.
-        void blur_box( const QImage& input, int radius, QImage& output );
+        void blur_box( const Image& input, int radius, Image& output );
 
     A naive implementation of this takes
 O(n · radius²) running time (n is the number of
@@ -199,14 +187,14 @@ is:
 
         // Sharpens the `input` image by moving `amount` away from a blur with `radius`.
         // Saves the result into `output`.
-        void sharpen( const QImage& input, real amount, int radius, QImage& output );
+        void sharpen( const Image& input, real amount, int radius, Image& output );
 
 4. **(25 points)** Scale the image to a new dimension. The function
 signature is:
 
         // Scales the `input` image to the new dimensions, saving the result
         // into `output`.
-        void scale( const QImage& input, int new_width, int new_height, QImage& output );
+        void scale( const Image& input, int new_width, int new_height, Image& output );
 
     In theory, scaling reconstructs a continuous function from the input
 image and then resamples it at evenly spaced locations (the pixels of
@@ -221,16 +209,12 @@ function call *f(x)* or *f(x,y)* to access the filter values instead
 of looking them up in an array *b*[x] or *b*[x,y]. The filter you
 will use is a triangle function:
 
-        triangle( radius, x ) = max( 0, 1 - | x/radius | )
-
-    $$\text{triangle}( \textit{radius}, x ) = \text{max}\left( 0, 1 - \left| \frac{x}{\text{radius}} \right| \right)$$
+    triangle( radius, *x* ) = max( 0, 1 - |*x*/radius| )
 
     You will need to normalize this on-the-fly.  
     In 2D, the filter is
 
-         f(x,y) = triangle( radius_x, x ) * triangle( radius_y, y )
-
-    $$f(x,y ) = \text{triangle}( \text{radius}_x, x ) \cdot \text{triangle}( \text{radius}_y, y )$$
+     *f(x,y)* = triangle( radius<sub>x</sub>, *x* ) · triangle( radius<sub>y</sub>, *y* )
     
     By picking the right right radius for x and y, the scaling function will
 eliminate high frequencies that cause aliasing artifacts. The formula
@@ -238,12 +222,6 @@ for the radius is:
 
         if new_size > old_size: radius = 1
         else: radius = old_size/new_size
-
-    $$\text{radius} =
-\begin{cases}
-1 & \text{if} \quad \text{new\_size} > \text{old\_size} \\\\
-\frac{ \text{ old\_size } }{ \text{ new\_size } } & \text{otherwise}
-\end{cases}$$
     
     where size is the width or height.
 Pseudocode for 1D image resizing can be found on slide 53 of *10 Signal
@@ -257,15 +235,16 @@ scaling horizontally and then scaling vertically (or vice versa).
 5. **(25 points)** Detect edges. Edge detection can be implemented in
 various ways. The reference implementation uses 1D convolution with the
 filter [ -1 0 1 ]. Convolving with the filter horizontally produces a
-$D_x$ image and vertically produces a $D_y$ image. Note that this filter
+*D<sub>x</sub>* image and vertically produces a *D<sub>y</sub>* image. Note that this filter
 cannot be normalized, since it sums to 0. Also note that this filter
 will produce positive and negative values; store the absolute value. The
 final value for a pixel of the edge detected image is
-$\sqrt{ D_x^2 + D_y^2 }$. The function signature is:
+sqrt( *D<sub>x</sub>* ² + *D<sub>y</sub>* ² ).
+The function signature is:
 
         // Performs edge detection on the `input` image.
         // Stores the result into `output`.
-        void edge_detect( const QImage& input, QImage& output );
+        void edge_detect( const Image& input, Image& output );
 
 6. **(additional ? points)** Additional operations. Make suggestions!
 
@@ -292,15 +271,12 @@ you do this, you will be ignoring part of the filter. Therefore, the
 part of the filter that you do use will no longer sum to one. You will
 need to renormalize by dividing by the sum of non-ignored filter values.
 
-* Do not perform arithmetic operations on a QRgb. First extract the components
-to integers or floating point types.
-
-* Don't store partial sums in a `QRgb`, which have only 8-bit precision for
+* Don't store partial sums in a `ColorRGBA8`, which have only 8-bit precision for
 each channel. If your partial sums are real numbers, you would lose a
 lot of precision if you round after each addition. If you are
 normalizing on-the-fly, the partial sums may overflow, because the sum
 of 8-bit numbers often won't fit into another 8-bit number. When storing
-the results back into a `QRgb`, make sure values are in the range
+the results back into a `ColorRGBA8`, make sure values are in the range
 [0,255]. You can use `min()` and `max()` or the provided `clamp()` helper
 function.
 
@@ -311,14 +287,14 @@ array (`std::vector<int>`) as necessary.
 
 * You can halve the amount of code you need to write for separable filters
 by iterating with pointers to pixel data. See the discussion of
-`image.scanLine()` below. For non-separable functions, working with
+`image.scanline()` below. For non-separable functions, working with
 pointers to pixel data will not reduce the amount of code you write
 (though the code will run faster).
 
 * Convolution, correctly defined, says that you iterate over the filter
 with flipped (negated) coordinates. This only matters for unsymmetrical
 filters. The only ones you will encounter are `heart.png` and
-`direction.png`. You should use `filter.mirrored( true, true )` instead of
+`direction.png`. You should use `filter.flip().mirror()` instead of
 `filter` to get the correct results.
 
 * You can compare your output in a few ways:
@@ -335,22 +311,22 @@ filters. The only ones you will encounter are `heart.png` and
 
     * Do not use a program which returns true or false based on whether all the bits match. Slightly different implementations can round to slightly different answers, which is fine. Our spec is not bit-exact (and arguably should not be).
 
-Qt functions you need for this assignment
+Framework functions you need for this assignment
 -----------------------------------------
 
-**QImage:**
+**Image:**
 
-* `image.pixel(x,y)` returns the `QRgb` color for pixel x,y of a `QImage image`.
-* `image.setPixel(x,y,c)` sets the pixel to a `QRgb` color `c`.
+* `image.pixel(x,y)` returns the `ColorRGBA8` color for pixel x,y of a `Image image`.
+* `image.pixel(x,y) = c` sets the pixel to a `ColorRGBA8` color `c`.
 
 * `image.width()` and `image.height()` return the width and height of the
 image.
 
-* `image.scanLine(y)` returns a pointer to the array of `QRgb` pixel data for
+* `image.scanline(y)` returns a pointer to the array of `ColorRGBA8` pixel data for
 row y. That pointer points to the pixel (0,y). If you have a pointer to
-a pixel `QRgb* pix`, the next pixel in the row is `pix+1` and the next
-pixel in the column is `pix+image.bytesPerLine()/4`. Therefore, the
-pointer to the first pixel in column x is `(QRgb*)image.scanLine(0)+x`.
+a pixel `ColorRGBA8* pix`, the next pixel in the row is `pix+1` and the next
+pixel in the column is `pix+image.width()`. Therefore, the
+pointer to the first pixel in column x is `image.scanline(0)+x`.
 By keeping track of the *stride* between pixels, you can write general
 functions that iterate over either rows or columns. Such a function
 would take a pointer to the first pixel, the stride between pixels, and
@@ -360,46 +336,26 @@ columns, as opposed to iterating over a square region. The code will
 also run faster. For an example of how to use these methods, see the
 `greyscale()` function.
 
-* `QImage( width, height, QImage::Format_ARGB32 )` creates a blank image
-full of `QRgb` pixels.
+* `Image( width, height )` creates a blank image
+full of `ColorRGBA8` pixels.
+The pixel values are undefined, so set them via `.pixel()` or `.fill()`.
 
-* `image.mirrored( true, true )` returns a copy of the image mirrored
+* `image.flip().mirror()` returns a copy of the image mirrored
 horizontally and vertically.
 
-`sqrt(x)`, `std::min(a,b)`, `std::max(a,b)`. These are not Qt functions.
-They are part of C's `math.h` and C++'s <algorithm>. Nevertheless, you
-will find them useful. Note that `std::min` and `std::max` require both
+`sqrt(x)`, `std::min(a,b)`, `std::max(a,b)`, `lround(x)`. These are part of C's `math.h`
+(in C++ included as `<cmath>`)
+and C++'s `<algorithm>`. You will find them useful.
+Note that `std::min` and `std::max` require both
 parameters to have the exact same type. If not, you will get a very long
 compiler error since they are generic functions written using C++
 templates.
 
-**QRgb.** To get the red, green, blue, and alpha components of a QRgb
-color `c` as 8-bit values, use `qRed(c)`, `qGreen(c)`, `qBlue(c)`, and
-`qAlpha(c)`. In this assignment, we are ignoring alpha. To create an RGB
-`QRgb` color, use `qRgb( red, green, blue )` with 8-bit parameters. Note
-that `QRgb` is not a class or a struct. It is a `typedef` for an `unsigned int`,
-and those functions are just getting and setting the appropriate
-bytes. The header `qrgb.h` is very short and readable. Here is most of
-it:
-
-```c++
-typedef unsigned int QRgb;                        // RGB triplet
-
-inline int qRed(QRgb rgb)                // get red part of RGB
-{ return ((rgb >> 16) & 0xff); }
-
-inline int qGreen(QRgb rgb)                // get green part of RGB
-{ return ((rgb >> 8) & 0xff); }
-
-inline int qBlue(QRgb rgb)                // get blue part of RGB
-{ return (rgb & 0xff); }
-
-inline int qAlpha(QRgb rgb)                // get alpha part of RGBA
-{ return rgb >> 24; }
-
-inline QRgb qRgb(int r, int g, int b)// set RGB value
-{ return (0xffu << 24) | ((r & 0xffu) << 16) | ((g & 0xffu) << 8) | (b & 0xffu); }
-
-inline QRgb qRgba(int r, int g, int b, int a)// set RGBA value
-{ return ((a & 0xffu) << 24) | ((r & 0xffu) << 16) | ((g & 0xffu) << 8) | (b & 0xffu); }
-```
+**ColorRGBA8** To get the red, green, blue, and alpha components of a
+`ColorRGBA8` color `c` as 8-bit values, use `c.r`, `c.g`, `c.b`, and `c.a`.
+In this assignment, we are ignoring alpha.
+To create an RGB `ColorRGBA8` color, use `ColorRGBA8( red, green, blue )` with
+8-bit parameters. Each of the parameters should be an integer number in the
+range [0,255], inclusive. Note that `ColorRGBA8` is a
+4-byte struct; some packages instead use a `typedef` for an `unsigned int` and
+then perform bitwise manipulation to store the appropriate bytes.
