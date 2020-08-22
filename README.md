@@ -209,7 +209,7 @@ function call *f(x)* or *f(x,y)* to access the filter values instead
 of looking them up in an array *b*[x] or *b*[x,y]. The filter you
 will use is a triangle function:
 
-    triangle( radius, *x* ) = max( 0, 1 - |*x*/radius| )
+    triangle( radius, *x* ) = max( 0, 1 - | *x*/radius | )
 
     You will need to normalize this on-the-fly.  
     In 2D, the filter is
