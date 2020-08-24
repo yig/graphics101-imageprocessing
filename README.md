@@ -116,10 +116,12 @@ for all of the examples. Run it via `./imageprocessing batch run_all.txt`.
 * Create a file named `Notes.txt` in the folder. Describe any known issues or extra features. Name people in the class who deserve a star for
 helping you (not by giving your their code!).
 
-* When done, zip your entire `imageprocessing` directory and your `Notes.txt` file as
-`hw04_lastname_firstname.zip`. Upload your solution to Blackboard
-before the deadline. Do not include your output images; they take up a
+* When done, zip your entire `imageprocessing` directory and
+your `Notes.txt` file as `hw04_lastname_firstname.zip`.
+Do not include your `build` directory. It is large and unnecessary.
+Do not include your output images; they take up a
 lot of space and the grader will regenerate them.
+Upload your solution to Blackboard before the deadline.
 
 * **THIS IS AN INDIVIDUAL, NOT A GROUP ASSIGNMENT. That means all code
 written for this assignment should be original! Although you are
