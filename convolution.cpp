@@ -56,7 +56,7 @@ void greyscale( const Image& input, Image& output ) {
     // 1 Using input.pixel()
     for( int j = 0; j < input.height(); ++j ) {
         for( int i = 0; i < input.width(); ++i ) {
-            // To access the i-th pixel, multiply i by the stride.
+            // The pixel() method gives direct access to the pixel at row i and column j.
             const ColorRGBA8 pix = input.pixel( i,j );
             
             // The grey value is just the average of red, green, and blue.
