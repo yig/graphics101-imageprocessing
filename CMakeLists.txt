@@ -20,4 +20,4 @@ add_executable(imageprocessing ${SRCS})
 
 target_link_libraries(imageprocessing)
 
-include("CMakeLists-zip.txt")
+include("CMakeLists-zip.txt" OPTIONAL)
