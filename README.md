@@ -117,8 +117,13 @@ for all of the examples. Run it via `./imageprocessing batch run_all.txt`.
 helping you (not by giving your their code!).
 
 * When done, zip your entire `imageprocessing` directory and
-your `Notes.txt` file as `hw04_lastname_firstname.zip`.
-Do not include your `build` directory. It is large and unnecessary.
+your `Notes.txt` file as `hw04_NetID.zip`.
+There is a target named `zip` that will do this for you (`cmake --build . --target zip`)
+or you can use the `cpack` command from inside your build directory.
+If you tell CMake your NetID, it will even create a zip file with the correct name.
+You can specify this by running `cmake .. -DNETID=<NetID>` or `ccmake ..` or in the CMake GUI.
+If you create the zip file manually,
+do not include your `build` directory. It is large and unnecessary.
 Do not include your output images; they take up a
 lot of space and the grader will regenerate them.
 Upload your solution to Blackboard before the deadline.

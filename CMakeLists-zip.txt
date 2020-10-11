@@ -1,0 +1,47 @@
+# A custom target to create a zip file to handin.
+# The user must specify their NetID to get a correctly named zip file.
+# You can specify this by running `ccmake ..` or the CMake GUI or `cmake .. -DNETID=<NetID>`.
+set(NETID "NetID" CACHE STRING "Your NetID for naming the zip file.")
+
+# Version 1: A custom target named "zip". Run "make zip" or "cmake --build . --target zip"
+
+add_custom_target(zip COMMAND
+    ${CMAKE_COMMAND} -E tar "cfv" "${CMAKE_BINARY_DIR}/hw04_${NETID}.zip" --format=zip
+    ${SRCS}
+    "Notes.txt"
+    "CMakeLists.txt"
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+    VERBATIM
+)
+
+
+# Version 2: Describe the package to make from this. Run "make package" or "cpack"
+
+# Install everything but subtract things we don't want.
+# The trailing slash after "${PROJECT_SOURCE_DIR}/" prevents
+# an extra layer of directories.
+install(DIRECTORY "${PROJECT_SOURCE_DIR}/"
+    DESTINATION .
+    PATTERN ".git*" EXCLUDE
+    PATTERN ".DS_Store" EXCLUDE
+    # Qt Creator creates .user files
+    PATTERN "*.user" EXCLUDE
+    PATTERN "build*" EXCLUDE
+    PATTERN "examples" EXCLUDE
+    PATTERN "docs" EXCLUDE
+    PATTERN "README.md" EXCLUDE
+)
+
+# Install only what we specify.
+# install(FILES
+#     ${SRCS}
+#     "Notes.txt"
+#     "CMakeLists.txt"
+#     DESTINATION .
+# )
+
+set(CPACK_GENERATOR "ZIP")
+set(CPACK_PACKAGE_FILE_NAME "hw04_${NETID}")
+set(CPACK_INCLUDE_TOPLEVEL_DIRECTORY OFF)
+set(CPACK_VERBATIM_VARIABLES YES)
+include(CPack)
