@@ -13,7 +13,7 @@ add_custom_target(zip COMMAND
 )
 
 
-# Version 2: Describe the package to make from this. Run "make package" or "cpack"
+# Version 2: Describe the package to create. Run "make package" or "cpack"
 
 # Install everything but subtract things we don't want.
 # The trailing slash after "${PROJECT_SOURCE_DIR}/" prevents

@@ -161,7 +161,7 @@ red, green, and blue. Because most image formats store their pixel
 values as 8-bit numbers, assume that the filter images are stored
 **not** normalized. Normalize them when you apply them by dividing by
 the sum of all pixel values. Don't forget that the indices into filter
-are negated. See the tip below about `.mirrored()`.
+are negated. See the tip below about `.flip().mirror()`.
 
 2. **(25 points)** Blur with a box filter. Blurring with a box filter is
 one of the simplest kinds of convolution there is. It simply replaces
@@ -345,8 +345,7 @@ also run faster. For an example of how to use these methods, see the
 full of `ColorRGBA8` pixels.
 The pixel values are undefined, so set them via `.pixel()` or `.fill()`.
 
-* `image.flip().mirror()` returns a copy of the image mirrored
-horizontally and vertically.
+* `Image(image).flip().mirror()` returns a copy of `image` mirrored horizontally and vertically.
 
 `sqrt(x)`, `std::min(a,b)`, `std::max(a,b)`, `lround(x)`. These are part of C's `math.h`
 (in C++ included as `<cmath>`)
