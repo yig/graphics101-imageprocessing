@@ -8,7 +8,7 @@ add_custom_target(zip COMMAND
     "Notes.txt"
     "CMakeLists.txt"
     "CMakeLists-zip.txt"
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+    WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
     VERBATIM
 )
 
