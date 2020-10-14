@@ -347,8 +347,8 @@ The pixel values are undefined, so set them via `.pixel()` or `.fill()`.
 
 * `Image(image).flip().mirror()` returns a copy of `image` mirrored horizontally and vertically.
 
-`sqrt(x)`, `std::min(a,b)`, `std::max(a,b)`, `lround(x)`. These are part of C's `math.h`
-(in C++ included as `<cmath>`)
+`sqrt(x)`, `std::min(a,b)`, `std::max(a,b)`, `lround(x)`, `floor(x)`, `ceil(x)`.
+These are part of C's `math.h` (in C++ included as `<cmath>`)
 and C++'s `<algorithm>`. You will find them useful.
 Note that `std::min` and `std::max` require both
 parameters to have the exact same type. If not, you will get a very long
