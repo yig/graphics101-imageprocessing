@@ -111,6 +111,8 @@ for all of the examples. Run it via `./imageprocessing batch run_all.txt`.
 (I have also provided the script `run_all_gen.py` I used to generate
 `run_all.txt`.)
 
+* Even better, there is now an autograder which runs all the commands and compares your output to ground truth. Find it [here](https://github.com/yig/graphics101-imageprocessing-autograder).
+
 * You are encouraged to share blooper images you create while implementing the assignment on Piazza.
 
 * Create a file named `Notes.txt` in the folder. Describe any known issues or extra features. Name people in the class who deserve a star for
