@@ -343,9 +343,9 @@ columns, as opposed to iterating over a square region. The code will
 also run faster. For an example of how to use these methods, see the
 `greyscale()` function.
 
-* `Image( width, height )` creates a blank image
-full of `ColorRGBA8` pixels.
-The pixel values are undefined, so set them via `.pixel()` or `.fill()`.
+* `Image( width, height )` creates a blank image full of undefined `ColorRGBA8` pixels.
+`Image( width, height, color )` creates an image filled with the given `ColorRGBA8 color`.
+Set pixel values via `.pixel()` or `.fill()`.
 
 * `Image(image).flip().mirror()` returns a copy of `image` mirrored horizontally and vertically.
 
