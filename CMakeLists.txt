@@ -6,14 +6,14 @@ project(imageprocessing)
 set(CMAKE_CXX_STANDARD 11)
 
 set(SRCS
-    convolution.cpp
-    convolution.h
-    image.cpp
-    image.h
-    main.cpp
-    stb_image.h
-    stb_image_resize.h
-    stb_image_write.h
+    src/convolution.cpp
+    src/convolution.h
+    src/image.cpp
+    src/image.h
+    src/main.cpp
+    src/stb_image.h
+    src/stb_image_resize.h
+    src/stb_image_write.h
 )
 
 add_executable(imageprocessing ${SRCS})
