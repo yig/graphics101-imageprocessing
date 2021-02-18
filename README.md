@@ -16,14 +16,20 @@ this:
 Although these effects look fancy, they are all based on the same
 operation: convolution.
 
-Background reading for this assignment: Chapter 9 *Signal Processing* from *Fundamentals of Computer Graphics (4th edition)* by Steve Marschner and Peter Shirley.
-
 Goals:
 ------
 
 * Understand convolution and image processing.
 * Gain insight into high performance image processing algorithms.
 * Gain more experience with raster images.
+
+Background:
+----------
+
+Book (FoCG,4e): Chapter 9 *Signal Processing*.
+* Video: "Lecture 10: Signal Processing" and "Assignment 4: Image Processing"
+
+(FoCG,4e is *Fundamentals of Computer Graphics (4th edition)* by Steve Marschner and Peter Shirley, 4th edition.)
 
 Getting Started & Handing In:
 -----------------------------
