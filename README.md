@@ -26,7 +26,7 @@ Goals:
 Background:
 ----------
 
-Book (FoCG,4e): Chapter 9 *Signal Processing*.
+* Book (FoCG,4e): Chapter 9 *Signal Processing*.
 * Video: "Lecture 10: Signal Processing" and "Assignment 4: Image Processing"
 
 (FoCG,4e is *Fundamentals of Computer Graphics (4th edition)* by Steve Marschner and Peter Shirley, 4th edition.)
