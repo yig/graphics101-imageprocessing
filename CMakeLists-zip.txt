@@ -18,26 +18,29 @@ add_custom_target(zip COMMAND
 # Install everything but subtract things we don't want.
 # The trailing slash after "${PROJECT_SOURCE_DIR}/" prevents
 # an extra layer of directories.
-install(DIRECTORY "${PROJECT_SOURCE_DIR}/"
-    DESTINATION .
-    PATTERN ".git*" EXCLUDE
-    PATTERN ".DS_Store" EXCLUDE
-    # Qt Creator creates .user files
-    PATTERN "*.user" EXCLUDE
-    PATTERN "build*" EXCLUDE
-    PATTERN "examples" EXCLUDE
-    PATTERN "docs" EXCLUDE
-    PATTERN "README.md" EXCLUDE
-)
+# install(DIRECTORY "${PROJECT_SOURCE_DIR}/"
+#     DESTINATION .
+#     PATTERN ".git*" EXCLUDE
+#     PATTERN ".DS_Store" EXCLUDE
+#     # Qt Creator creates .user files
+#     PATTERN "*.user" EXCLUDE
+#     PATTERN "build*" EXCLUDE
+#     PATTERN "examples" EXCLUDE
+#     PATTERN "docs" EXCLUDE
+#     PATTERN "README.md" EXCLUDE
+# )
 
 # Install only what we specify.
-# install(FILES
-#     ${SRCS}
-#     "Notes.txt"
-#     "CMakeLists.txt"
-#     "CMakeLists-zip.txt"
-#     DESTINATION .
-# )
+install(FILES
+    "Notes.txt"
+    "CMakeLists.txt"
+    "CMakeLists-zip.txt"
+    DESTINATION .
+)
+install(FILES
+    ${SRCS}
+    DESTINATION "src"
+)
 
 set(CPACK_GENERATOR "ZIP")
 set(CPACK_PACKAGE_FILE_NAME "${CMAKE_PROJECT_NAME}")

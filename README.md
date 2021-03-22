@@ -76,7 +76,7 @@ at the top. There are some suggested signatures.
 * Build and run and test that it is working correctly. Qt Creator has a
 great debugger.
 
-* Run the following commands on the provided example images (replace `balls`
+* You can run the following commands on the provided example images (replace `balls`
 with the name of each example).
 
         ./imageprocessing grey balls.png balls-grey.png
@@ -260,6 +260,12 @@ The function signature is:
         // Stores the result into `output`.
         void edge_detect( const Image& input, Image& output );
 
+Edge detect doesn't make sense if part of the filter is off the canvas,
+so set pixels along the boundary of the image to black (no edges).
+If you want to be fancy, you could convolve vertically along the left and right
+edges and vertically along the top and bottom edges, or you could virtually
+extend the image by repeating the closest value.
+
 6. **(additional ? points)** Additional operations. Make suggestions!
 
 Tips
@@ -312,6 +318,8 @@ filters. The only ones you will encounter are `heart.png` and
 `filter` to get the correct results.
 
 * You can compare your output in a few ways:
+
+    * With the [autograder](https://github.com/yig/graphics101-imageprocessing-autograder).
 
     * Open both images in a viewer which lets you flip back and forth in-place with, for example, the right and left arrow keys. You could, for example, open them in browser tabs and switch tabs back-and-forth. Rapidly switching back and forth in-place is a good technique to visually understand the differences.
 
