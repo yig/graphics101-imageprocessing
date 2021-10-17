@@ -315,7 +315,7 @@ pointers to pixel data will not reduce the amount of code you write
 with flipped (negated) coordinates. This only matters for unsymmetrical
 filters. The only ones you will encounter are `heart.png` and
 `direction.png`. You should use `filter.flip().mirror()` instead of
-`filter` to get the correct results.
+`filter` to get the correct results (unless you flip your filter coordinates).
 
 * You can compare your output in a few ways:
 
