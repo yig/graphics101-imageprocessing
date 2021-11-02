@@ -17,9 +17,12 @@ set(SRCS
 )
 
 add_executable(imageprocessing ${SRCS})
-## On Windows, the following line may help build a static binary that can be called from the autograder:
-# target_link_libraries(imageprocessing -static)
-## Some platforms can't build entirely static binaries, so I'm leaving it off by default.
 target_link_libraries(imageprocessing)
+
+## On Windows, the following line may help build a static binary that can be called from the autograder.
+## Some platforms can't build entirely static binaries, so I'm leaving it off by default.
+if(WIN32)
+    target_link_libraries(imageprocessing -static)
+endif()
 
 include("CMakeLists-zip.txt" OPTIONAL)
