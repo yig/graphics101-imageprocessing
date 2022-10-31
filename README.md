@@ -131,8 +131,9 @@ There is a target named `zip` that will do this for you (`cmake --build . --targ
 or you can use the `cpack` command from inside your build directory.
 If you create the zip file manually,
 do not include your `build` directory. It is large and unnecessary.
-Do not include your output images or the `examples` directory, either.
-They take up a lot of space and the grader will regenerate them.
+Include your autograder output folder in the zip file.
+(Do not include other output images or the `examples` directory.
+They take up a lot of space. What's needed is included in the autograder folder.)
 Upload your solution to Blackboard before the deadline.
 
 * **THIS IS AN INDIVIDUAL, NOT A GROUP ASSIGNMENT. That means all code
