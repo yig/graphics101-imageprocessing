@@ -150,7 +150,7 @@ Rubric:
 enumerated below, providing several paths to 100. You could implement
 `convolve()`, `blur_box()`, `scale()`, and `edge_detect()`. Or you could skip
 one of them and implement `sharpen()` and one of the performance
-enhancements.*
+enhancements. Points above 100 are worth 1/2 credit, so a raw score of 120 becomes 110.*
 
 1. **(25 points)** Convolve with an arbitrary 2D filter image. The function
 signature is:
